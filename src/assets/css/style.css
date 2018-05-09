@@ -656,13 +656,13 @@ ul{
     height: 555px;
 }
 .top-item-1{
-    background-image: url(../../images/slider/1.jpg);
+    background-image: url(../images/slider/1.jpg);
 }
 .top-item-2{
-    background-image: url(../../images/slider/2.jpg);
+    background-image: url(../images/slider/2.jpg);
 }
 .top-item-3{
-    background-image: url(../../images/slider/3.jpg);
+    background-image: url(../images/slider/3.jpg);
 }
 .top-item-content{
     padding: 0 50px;
@@ -1165,7 +1165,7 @@ ul{
 13 - Testimonial Module
 -----------------------------------------------------------------------*/
 .testimonial-module{
-    background-image: url(../../images/bg/testimonial.jpg);
+    background-image: url(../images/bg/testimonial.jpg);
 }
 .testimonial-module .module-title{
     display: inline-block;
@@ -1835,7 +1835,7 @@ footer.style-2{
 28 - Product Page
 -----------------------------------------------------------------------*/
 .product-page-header .header-bg{
-    background-image: url(../../images/bg/product-page.jpg);
+    background-image: url(../images/bg/product-page.jpg);
 }
 #products-listing {
     padding: 15px 0 0;
@@ -2081,7 +2081,7 @@ footer.style-2{
 }
 .input-style {
     position: absolute;
-    background-image: url(../../images/plugin/form-sprite.png);
+    background-image: url(../images/plugin/form-sprite.png);
     right: -1px;
     top: -1px;
     height: 27px;
@@ -2733,13 +2733,13 @@ footer.style-2{
 33 - Contact Page
 -----------------------------------------------------------------------*/
 .contact-page-header .header-bg{
-    background-image: url(../../images/bg/contact.jpg);
+    background-image: url(../images/bg/contact.jpg);
 }
 .contact-page .contact-form [name="message"]{
     height: 150px;
 } 
 .contact-page .contact-form{
-    background-image: url(../../images/junk/contact-form.png);
+    background-image: url(../images/junk/contact-form.png);
     background-position: left top;
     background-repeat: repeat-x;
     padding: 30px;
@@ -2782,7 +2782,7 @@ footer.style-2{
 34 - Blog Page
 -----------------------------------------------------------------------*/
 .blog-page-header .header-bg{
-    background-image: url(../../images/bg/contact.jpg);
+    background-image: url(../images/bg/contact.jpg);
 }
 .blog-page-main {
     padding: 15px 0;
