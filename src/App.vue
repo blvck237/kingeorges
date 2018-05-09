@@ -5,9 +5,12 @@
 </template>
 
 <script>
-// import './assets/js/bootstrap.min.js'
+import Header from './components/Header/Header'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Header,
+  }
 }
 </script>
 
