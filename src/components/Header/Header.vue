@@ -6,20 +6,20 @@
                     <div class="top-block localize-block">
                         <div class="language-selector top-selector">
                             <div class="language-selected top-selected">
-                                <img src="images/flag/2.jpg" alt="Français" class="flag">
+                                <img src="../../assets/images/flag/2.jpg" alt="Français" class="flag">
                                 <span>Français</span>
                                 <i class="fa fa-angle-down"></i>
                             </div>
                             <ul id="language-select" class="top-select language-select">
                                 <li class="selected">
                                     <a href="#">
-                                        <img src="images/flag/1.jpg" alt="English" class="flag">
+                                        <img src="../../assets/images/flag/1.jpg" alt="English" class="flag">
                                         <span>English</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img src="images/flag/2.jpg" alt="English" class="flag">
+                                        <img src="../../assets/images/flag/2.jpg" alt="English" class="flag">
                                         <span>Français</span>
                                     </a>
                                 </li>
@@ -63,6 +63,7 @@
         </div>
     </header>
 </template>
+
 
 <style>
 
