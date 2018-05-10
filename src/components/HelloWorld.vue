@@ -12,12 +12,12 @@
             <!-- Top page -->
             <el-row class="top-page">
               <!-- Side menu navigation -->
-              <el-col :span="4">
+              <el-col :span="6">
                 <SideNav></SideNav>
               </el-col>
 
               <!-- Carousel -->
-              <el-col :span="20">
+              <el-col :span="18">
                   <Carousel></Carousel>
               </el-col>
             </el-row>
@@ -25,13 +25,19 @@
             <!-- Mid Page -->
             <el-row class="mid-page">
               <!-- Email subscription card -->
-              <el-col :span="4">
+              <el-col :span="6">
                 <Card></Card>
               </el-col>
 
               <!-- Product cards + Carousel -->
-              <el-col :span="20">
-                <ProdCard></ProdCard>
+              <el-col :span="6">
+                <ImageCard></ImageCard>
+              </el-col>
+              <el-col :span="6">
+                <ImageCard></ImageCard>
+              </el-col>
+              <el-col :span="6">
+                <ImageCard></ImageCard>
               </el-col>
               
             </el-row>
@@ -49,6 +55,7 @@
   import SideNav from "./SideNav/SideNav";
   import ProdCard from "./Product-Card/Product-Card";
   import Card from "./Card/Card";
+  import ImageCard from "./Image-Card/Image-Card";
   export default {
     name: "HelloWorld",
     components: {
@@ -56,7 +63,8 @@
       Carousel,
       SideNav,
       ProdCard,
-      Card
+      Card,
+      ImageCard
     },
     data() {
       return {
