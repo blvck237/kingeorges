@@ -1,21 +1,17 @@
 <template>
   <div id="app">
+    <img src="./assets/logo.png">
     <router-view/>
   </div>
 </template>
 
 <script>
-import Header from './components/Header/Header'
 export default {
-  name: 'App',
-  components: {
-    Header,
-  }
+  name: 'App'
 }
 </script>
 
 <style>
-@import './app.scss';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
