@@ -1,9 +1,24 @@
+.el-carousel{
+  border: 5px solid #F2F2F2;
+  outline: 1px solid #ccc;
+}
 .el-carousel__item h3 {
     color: #475669;
     font-size: 18px;
     opacity: 0.75;
     line-height: 300px;
     margin: 0;
+  }
+
+  .el-carousel__container > .el-carousel__arrow{
+    border-radius: 0 !important;
+    color: #FFA200;
+    background: #ffffff78;
+    font-size: 20px;
+  }
+
+  .el-carousel__container > .el-carousel__arrow:hover{
+    background: #fff;
   }
 
   .el-carousel__item:nth-child(2n) {
