@@ -27,6 +27,7 @@
               <!-- Email subscription card -->
               <el-col :span="6">
                 <Card></Card>
+                <AdCarousel></AdCarousel>
               </el-col>
 
               <!-- Product cards + Carousel -->
@@ -36,8 +37,8 @@
               <el-col :span="9">
                 <ImageCard></ImageCard>
               </el-col>
-              
             </el-row>
+
           </el-main>
           <el-footer>Footer</el-footer>
         </el-container>
@@ -53,6 +54,7 @@
   import ProdCard from "./Product-Card/Product-Card";
   import Card from "./Card/Card";
   import ImageCard from "./Image-Card/Image-Card";
+  import AdCarousel from "./Ad-Carousel/Ad-Carousel";
   export default {
     name: "HelloWorld",
     components: {
@@ -61,7 +63,8 @@
       SideNav,
       ProdCard,
       Card,
-      ImageCard
+      ImageCard,
+      AdCarousel
     },
     data() {
       return {
