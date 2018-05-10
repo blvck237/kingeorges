@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <el-container >
+  <div>
+    <el-container  class="home container">
       <!-- Page Header -->
       <el-header>
         <Navigation></Navigation>
@@ -30,13 +30,10 @@
               </el-col>
 
               <!-- Product cards + Carousel -->
-              <el-col :span="6">
+              <el-col :span="9">
                 <ImageCard></ImageCard>
               </el-col>
-              <el-col :span="6">
-                <ImageCard></ImageCard>
-              </el-col>
-              <el-col :span="6">
+              <el-col :span="9">
                 <ImageCard></ImageCard>
               </el-col>
               
@@ -77,8 +74,9 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.container{
-  background-color: #F2F2F2
+.home{
+  background-color: #F2F2F2;
+  margin: 0 auto
 }
 .mid-page{
   margin-top: 1em
@@ -86,4 +84,5 @@
 .el-col{
   padding: 1em
 }
+
 </style>
