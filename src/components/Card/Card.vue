@@ -8,7 +8,7 @@
   </el-card>
 </template>
 
-<style>
+<style scoped>
   @import './Card.scss';
 
 </style>

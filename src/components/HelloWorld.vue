@@ -1,36 +1,36 @@
 <template>
   <div class="container">
-    <el-container>
+    <el-container >
       <!-- Page Header -->
       <el-header>
         <Navigation></Navigation>
       </el-header>
 
       <!-- Page Body -->
-        <el-container>
+        <el-container >
           <el-main>
             <!-- Top page -->
-            <el-row>
+            <el-row class="top-page">
               <!-- Side menu navigation -->
-              <el-col :span="8">
+              <el-col :span="4">
                 <SideNav></SideNav>
               </el-col>
 
               <!-- Carousel -->
-              <el-col :span="16">
+              <el-col :span="20">
                   <Carousel></Carousel>
               </el-col>
             </el-row>
 
             <!-- Mid Page -->
-            <el-row>
+            <el-row class="mid-page">
               <!-- Email subscription card -->
-              <el-col :span="8">
+              <el-col :span="4">
                 <Card></Card>
               </el-col>
 
               <!-- Product cards + Carousel -->
-              <el-col :span="16">
+              <el-col :span="20">
                 <ProdCard></ProdCard>
               </el-col>
               
@@ -72,5 +72,10 @@
 .container{
   background-color: #F2F2F2
 }
-
+.mid-page{
+  margin-top: 1em
+}
+.el-col{
+  padding: 1em
+}
 </style>
