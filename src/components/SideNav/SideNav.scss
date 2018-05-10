@@ -1,0 +1,25 @@
+.nav-title{
+    background-color: #FFA200 !important;
+    color: #fff;
+    padding: 1em;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.137), 0 3px 10px 0 rgba(0, 0, 0, 0.068);
+}
+
+.el-menu{
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: 1px solid #ddd
+}
+
+.el-menu-item{
+    border-bottom: 1px solid #ddd
+}
+.el-menu-item:hover{
+    background: #fff;
+    color: #FFA200
+}
+
+.el-col-12{
+    width: 100%
+}
