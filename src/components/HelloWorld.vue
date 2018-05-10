@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <el-container>
       <!-- Page Header -->
       <el-header>
@@ -24,8 +24,9 @@
 
             <!-- Mid Page -->
             <el-row>
-              <!-- Email subscription -->
+              <!-- Email subscription card -->
               <el-col :span="8">
+                <Card></Card>
               </el-col>
 
               <!-- Product cards + Carousel -->
@@ -47,13 +48,15 @@
   import Carousel from "./Carousel/Carousel";
   import SideNav from "./SideNav/SideNav";
   import ProdCard from "./Product-Card/Product-Card";
+  import Card from "./Card/Card";
   export default {
     name: "HelloWorld",
     components: {
       Navigation,
       Carousel,
       SideNav,
-      ProdCard
+      ProdCard,
+      Card
     },
     data() {
       return {
@@ -66,6 +69,8 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.container{
+  background-color: #F2F2F2
+}
 
 </style>
