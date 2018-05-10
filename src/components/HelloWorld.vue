@@ -7,6 +7,7 @@
       <el-container>
         <el-container>
           <el-main>
+              <SideNav></SideNav>
             <Carousel></Carousel>
           </el-main>
           <el-footer>Footer</el-footer>
@@ -20,11 +21,13 @@
 <script>
   import Navigation from "./Navigation/Navigation";
   import Carousel from "./Carousel/Carousel";
+  import SideNav from "./SideNav/SideNav";
   export default {
     name: "HelloWorld",
     components: {
       Navigation,
-      Carousel
+      Carousel,
+      SideNav
     },
     data() {
       return {
