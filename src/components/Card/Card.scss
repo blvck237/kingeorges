@@ -1,11 +1,15 @@
 .text {
-    font-size: 14px;
-  }
+  font-size: 14px;
+}
 
-  .item {
-    padding: 18px 0;
-  }
+.card-title {
+  text-transform: uppercase;
+}
 
-  .box-card {
-    width: 480px;
-  }
+.el-button {
+  margin-top: 10px;
+  text-transform: uppercase;
+  background: #FFA200;
+  color: #fff;
+  font-weight: 700
+}
