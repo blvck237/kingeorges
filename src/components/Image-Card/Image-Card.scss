@@ -1,9 +1,12 @@
 .box-card{
-    height: 15em
+    border: 1px solid #ccc;
 }
 
 .box-card img {
     width: 100%;
     display:block;
-
  }
+
+ .box-card div{
+     padding: 0 !important;
+}
