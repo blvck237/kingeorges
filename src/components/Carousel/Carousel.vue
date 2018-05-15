@@ -1,7 +1,13 @@
 <template>
   <el-carousel :height="'27em'" :interval="5000" arrow="always">
-    <el-carousel-item v-for="item in 4" :key="item">
-      <h3>{{ item }}</h3>
+    <el-carousel-item >
+      <img src="../../assets/slider/1.jpg" alt="">
+    </el-carousel-item>
+    <el-carousel-item >
+      <img src="../../assets/slider/2.jpg" alt="">
+    </el-carousel-item>
+    <el-carousel-item >
+      <img src="../../assets/slider/3.jpg" alt="">
     </el-carousel-item>
   </el-carousel>
 </template>
@@ -12,6 +18,6 @@ export default {
 } 
 </script>
 
-<style>
+<style scoped>
 @import './Carousel.scss';
 </style>

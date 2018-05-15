@@ -24,6 +24,6 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 @import './Navigation.scss';
 </style>

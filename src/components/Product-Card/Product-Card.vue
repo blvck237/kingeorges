@@ -1,6 +1,6 @@
 <template>
   <el-row>
-    <el-col class="prodcard" :span="8" v-for="(o, index) in 1" :key="o">
+    <el-col class="prodcard" :span="24" >
 
       <!-- Card -->
       <el-card :body-style="{ padding: '0px' }">
@@ -54,7 +54,7 @@
 </script>
 
 
-<style>
+<style scoped>
   @import "./Product-Card.scss";
 
 </style>
