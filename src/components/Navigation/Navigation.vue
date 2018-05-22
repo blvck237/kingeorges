@@ -49,6 +49,11 @@
             </li>
           </ul>
         </div>
+        <div class="mx-auto order-0">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
       </nav>
     </div>
   </div>
