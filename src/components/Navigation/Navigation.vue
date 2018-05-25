@@ -1,29 +1,65 @@
 <template>
-  <div>
-    <el-menu :default-active="8" :active-text-color="'#FFA200'" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-      <img class="logo" src="../../assets/logo.png" alt="Logo Kingeorges">
-      <el-menu-item index="1"><i class="el-icon-goods"></i></el-menu-item>
-      <el-menu-item index="2"><i class="el-icon-search"></i></el-menu-item>
-      <el-menu-item index="3">Contact</el-menu-item>
-      <el-menu-item index="4">L'équipe</el-menu-item>
-      <el-menu-item index="5">Références</el-menu-item>
-      <el-menu-item index="6">Qui-sommes-nous?</el-menu-item>
-      <el-submenu index="7">
-        <template slot="title">Produits</template>
-        <el-menu-item index="7-1">Imprimerie</el-menu-item>
-        <el-menu-item index="7-2">Impression numerique</el-menu-item>
-        <el-menu-item index="7-3">Serigraphie moderne</el-menu-item>
-        <el-menu-item index="7-4">Broderie</el-menu-item>
-        <el-menu-item index="7-5">Peinture</el-menu-item>
-      </el-submenu>
-      <el-menu-item index="8">Accueil</el-menu-item>
+  <div class="navigation">
+    <div class="container">
+      <nav class="navbar navbar-expand-md">
+        <a class="navbar-brand" href="#">
+          <img class="d-inline-block align-top" src="../../assets/logo.png" alt="">
+        </a>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Accueil
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
 
-
-    </el-menu>
-    <div class="line"></div>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Produits
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Imprimerie</a>
+                <a class="dropdown-item" href="#">Serigraphie Moderne</a>
+                <a class="dropdown-item" href="#">Broderie</a>
+                <a class="dropdown-item" href="#">Impression numerique</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Qui-sommes nous?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">Références</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">L'équipe</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">
+                <i class="el-icon-search"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">
+                <i class="el-icon-goods"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="mx-auto order-0">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+    </div>
   </div>
 </template>
 
 <style scoped>
-@import './Navigation.scss';
+  @import "./Navigation.scss";
+
 </style>

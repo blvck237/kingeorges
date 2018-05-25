@@ -1,7 +1,7 @@
 <template>
     <div class="block">
     
-    <el-carousel>
+    <el-carousel  height="600px">
       <el-carousel-item :key="item">
           <img src="../../assets/sb1.jpg" alt="">
       </el-carousel-item>
