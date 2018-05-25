@@ -40,7 +40,12 @@
             </el-row>
 
           </el-main>
-          <el-footer>Footer</el-footer>
+
+
+        </el-container>
+
+        <el-container>
+          <Footer></Footer>
         </el-container>
       </el-container>
 
@@ -55,6 +60,7 @@
   import Card from "./Card/Card";
   import ImageCard from "./Image-Card/Image-Card";
   import AdCarousel from "./Ad-Carousel/Ad-Carousel";
+  import Footer from "./Footer/Footer";
   export default {
     name: "HelloWorld",
     components: {
@@ -64,7 +70,8 @@
       ProdCard,
       Card,
       ImageCard,
-      AdCarousel
+      AdCarousel,
+      Footer
     },
     data() {
       return {
