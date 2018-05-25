@@ -44,9 +44,7 @@
 
         </el-container>
 
-        <el-container>
           <Footer></Footer>
-        </el-container>
       </el-container>
 
   </div>
