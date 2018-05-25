@@ -40,7 +40,12 @@
 
       <div class="col-md-3 col-sm-12">
         <h3 class="row-title">Autres produits</h3>
-        <AdCarousel></AdCarousel>
+        <div class="fb-page" data-href="https://www.facebook.com/ImprimerieKingGeorges/" data-tabs="timeline, events" data-small-header="true"
+          data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true">
+          <blockquote cite="https://www.facebook.com/ImprimerieKingGeorges/" class="fb-xfbml-parse-ignore">
+            <a href="https://www.facebook.com/ImprimerieKingGeorges/">Imprimerie King Georges</a>
+          </blockquote>
+        </div>
       </div>
 
       <div class="col-md-9">
@@ -97,6 +102,20 @@
 
 </template>
 
+<div id="fb-root"></div>
+<script>
+  (function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src =
+      'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0&appId=219101098821514&autoLogAppEvents=1';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+</script>
+
 <script>
   import SideNav from "../components/SideNav/SideNav";
   import Carousel from "../components/Carousel/Carousel";
@@ -104,7 +123,7 @@
   import Card from "../components/Card/Card";
   import ProductCard from "../components/Product-Card/Product-Card";
   import ImageCard from "../components/Image-Card/Image-Card";
-  import Slick from 'vue-slick'
+  import Slick from "vue-slick";
   export default {
     name: "Home",
     components: {
@@ -119,7 +138,7 @@
       return {};
     },
     methods: {}
-  }
+  };
 
 </script>
 
@@ -130,7 +149,7 @@
 
   .row-title {
     text-transform: uppercase;
-    font-family: 'Oswald', sans-serif;
+    font-family: "Oswald", sans-serif;
     font-size: 1.2em;
     border-bottom: 1px solid #dddddd;
     box-shadow: 0 1px 0 0 #ffffff;
@@ -138,13 +157,13 @@
     margin-bottom: 15px;
     font-weight: 600;
     line-height: 1.1;
-    color: #3f3f3f
+    color: #3f3f3f;
   }
 
   .service-card {
     padding: 10px;
     font-size: 12px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
   }
 
   i {
@@ -157,9 +176,9 @@
     margin: auto;
     font-size: 1.8em;
     margin: 0.5em;
-    font-family: 'Oswald', sans-serif;
+    font-family: "Oswald", sans-serif;
     text-transform: uppercase;
-    color: #3f3f3f
+    color: #3f3f3f;
   }
 
   .card-title h3 {
