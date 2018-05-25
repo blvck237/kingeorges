@@ -39,9 +39,9 @@
     <section class="row">
 
       <div class="col-md-3 col-sm-12">
-        <h3 class="row-title">Autres produits</h3>
-        <div class="fb-page" data-href="https://www.facebook.com/ImprimerieKingGeorges/" data-tabs="timeline, events" data-small-header="true"
-          data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true">
+        <h3 class="row-title">Reseau social</h3>
+        <div class="fb-page" data-href="https://www.facebook.com/ImprimerieKingGeorges/" data-height="550" data-tabs="timeline, events"
+          data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true">
           <blockquote cite="https://www.facebook.com/ImprimerieKingGeorges/" class="fb-xfbml-parse-ignore">
             <a href="https://www.facebook.com/ImprimerieKingGeorges/">Imprimerie King Georges</a>
           </blockquote>
@@ -98,6 +98,74 @@
       </div>
     </section>
 
+    <!-- Footer -->
+    <footer id="myFooter">
+      <div class="row">
+        <div class="col-sm-3">
+          <h2 class="logo">
+            <a href="#">
+              <img src="../assets/logo.png" alt="" style="width: 5.5em;"> </a>
+          </h2>
+        </div>
+        <div class="col-sm-2">
+          <h5>Get started</h5>
+          <ul>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">Sign up</a>
+            </li>
+            <li>
+              <a href="#">Downloads</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-2">
+          <h5>About us</h5>
+          <ul>
+            <li>
+              <a href="#">Company Information</a>
+            </li>
+            <li>
+              <a href="#">Contact us</a>
+            </li>
+            <li>
+              <a href="#">Reviews</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-2">
+          <h5>Support</h5>
+          <ul>
+            <li>
+              <a href="#">FAQ</a>
+            </li>
+            <li>
+              <a href="#">Help desk</a>
+            </li>
+            <li>
+              <a href="#">Forums</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-3">
+          <div class="social-networks">
+
+            <a href="#" class="facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="google">
+              <i class="fab fa-google"></i>
+            </a>
+          </div>
+          <button type="button" class="btn btn-default">Contact us</button>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <p>© 2016 Copyright Text </p>
+      </div>
+    </footer>
   </div>
 
 </template>
@@ -196,6 +264,116 @@
     margin-right: 16px;
     display: inline-block;
     vertical-align: middle;
+  }
+
+  #myFooter {
+    background-color: #3c3d41;
+    color: white;
+    padding-top: 30px;
+  }
+
+  #myFooter .footer-copyright {
+    background-color: #333333;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+  }
+
+  #myFooter .row {
+    margin-bottom: 60px;
+  }
+
+  #myFooter .navbar-brand {
+    margin-top: 45px;
+    height: 65px;
+  }
+
+  #myFooter .footer-copyright p {
+    margin: 10px;
+    color: #ccc;
+  }
+
+  #myFooter ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+  }
+
+  #myFooter h5 {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+  }
+
+  #myFooter h2 a {
+    font-size: 50px;
+    text-align: center;
+    color: #fff;
+  }
+
+  #myFooter a {
+    color: #d2d1d1;
+    text-decoration: none;
+  }
+
+  #myFooter a:hover,
+  #myFooter a:focus {
+    text-decoration: none;
+    color: white;
+  }
+
+  #myFooter .social-networks {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 16px;
+  }
+
+  #myFooter .social-networks a {
+    font-size: 32px;
+    color: #f9f9f9;
+    padding: 10px;
+    transition: 0.2s;
+  }
+
+  #myFooter .social-networks a:hover {
+    text-decoration: none;
+  }
+
+  #myFooter .facebook:hover {
+    color: #0077e2;
+  }
+
+  #myFooter .google:hover {
+    color: #ef1a1a;
+  }
+
+  #myFooter .twitter:hover {
+    color: #00aced;
+  }
+
+  #myFooter .btn {
+    color: white;
+    background-color: #ffa200;
+    border-radius: 20px;
+    border: none;
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    line-height: 25px;
+  }
+
+  @media screen and (max-width: 767px) {
+    #myFooter {
+      text-align: center;
+    }
+  }
+
+
+  #myFooter {
+    flex: 0 0 auto;
+    -webkit-flex: 0 0 auto;
   }
 
 </style>
