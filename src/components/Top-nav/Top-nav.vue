@@ -1,55 +1,31 @@
 <template>
   <div class="top-nav">
     <div class="container">
-      <el-row :gutter="0">
-        <!-- Language select input -->
-        <el-col :span="2" :offset="0">
-          <el-select style="font-size: 3px;" v-model="value" placeholder="Language">
-            <el-option  v-for="language in languages" :key="language.value" :label="language.label" :value="language.value">
-            </el-option>
-          </el-select>
-        </el-col>
-
-        <!-- Currency select input -->
-        <el-col :span="2" :offset="0">
-          <el-select v-model="value" placeholder="Currency">
-            <el-option v-for="currency in currencies" :key="currency.value" :label="currency.label" :value="currency.value">
-            </el-option>
-          </el-select>
-        </el-col>
-
-        <!-- Contact -->
-        <el-col :span="6" :offset="5">
-          <div>
-            <el-button type="text">
-              <i class="el-icon-phone"></i>Contactez nous au +237 222 22 42 02</el-button>
+      <div class="form-row">
+        <div class="form-group col-md-1 col-sm-2">
+          <select id="language" class="form-control test">
+            <option selected>Francais</option>
+            <option>English</option>
+          </select>
+        </div>
+        <div class="form-group col-md-1 col-sm-2">
+          <select id="currency" class="form-control">
+            <option selected>XAF</option>
+            <option>EUR</option>
+          </select>
+        </div>
+        <div class="form-group col-md-8 col-sm-12">
+          <div class="contact btn">
+            Contactez nous au +237 222 22 42 02<i class="fa fa-phone"></i> 
           </div>
-        </el-col>
-
-        <!-- Register -->
-        <el-col :span="2" :offset="5">
-          <el-button type="text"><span>Inscription</span></el-button>
-        </el-col>
-
-        <!-- Suggestion -->
-        <el-col :span="2" :offset="0">
-          <el-button type="text"><span>Suggestion</span></el-button>
-        </el-col>
-      </el-row>
-
-      <el-row :gutter="20">
-        <el-col :span="6" :offset="6">
-          <div></div>
-        </el-col>
-        <el-col :span="6" :offset="6">
-          <div></div>
-        </el-col>
-      </el-row>
-      <el-row :gutter="20">
-        <el-col :span="12" :offset="6">
-          <div></div>
-        </el-col>
-      </el-row>
+        </div>
+        <div class="form-group col-md-1 col-sm-6">
+          <button type="button" class="btn btn-link ">Inscription</button>
+        </div>
+        <div class="form-group col-md-1 col-sm-6">
+          <button type="button" class="btn btn-link">Suggestion</button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
