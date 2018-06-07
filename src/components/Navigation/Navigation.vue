@@ -8,9 +8,9 @@
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Accueil
+              <router-link tag="a" class="nav-link" to="/home">Accueil
                 <span class="sr-only">(current)</span>
-              </a>
+              </router-link>
             </li>
 
             <li class="nav-item dropdown">
@@ -19,10 +19,10 @@
                 Produits
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Imprimerie</a>
-                <a class="dropdown-item" href="#">Serigraphie Moderne</a>
-                <a class="dropdown-item" href="#">Broderie</a>
-                <a class="dropdown-item" href="#">Impression numerique</a>
+                <router-link tag="li" to="/products">Imprimerie</router-link>
+                <router-link tag="li" to="/products">Serigraphie Moderne</router-link>
+                <router-link tag="li" to="/products">Broderie</router-link>
+                <router-link tag="li" to="/products">Impression numerique</router-link>
               </div>
             </li>
             <li class="nav-item">

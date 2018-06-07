@@ -18,13 +18,15 @@ a:hover {
 }
 
 li {
-  color: #fff;
+  color: #000;
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
 
 li:hover {
   background: #ffa200;
+  color: #fff;
+  cursor: pointer;
 }
 
 .nav-link {
