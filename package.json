@@ -12,10 +12,12 @@
   "dependencies": {
     "bootstrap": "^4.1.1",
     "element-ui": "^2.3.7",
+    "firebase": "^5.0.4",
     "jquery": "^3.3.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
-    "vue-slick": "^1.1.12"
+    "vue-slick": "^1.1.12",
+    "vuefire": "^2.0.0-alpha.11"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
