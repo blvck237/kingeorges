@@ -4,10 +4,10 @@
 
       <!-- Card -->
       <el-card :body-style="{ padding: '0px' }">
-        <img src="../../assets/2.2.jpg" class="image">
+        <img :src='src' class="image">
         <div>
             <!-- Product name -->
-          <span class="prod-name">Sac serigraphie</span>
+          <span class="prod-name">{{name}}</span>
           <!-- Product Rating -->
           <div class="prod-rating">
             <i class="el-icon-star-on"></i>
@@ -44,6 +44,7 @@
 
 <script>
   export default {
+    props:['name', 'src'],
     data() {
       return {
         currentDate: new Date()
