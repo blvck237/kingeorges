@@ -10,11 +10,7 @@
           <span class="prod-name">{{name}}</span>
           <!-- Product Rating -->
           <div class="prod-rating">
-            <i class="el-icon-star-on"></i>
-            <i class="el-icon-star-on"></i>
-            <i class="el-icon-star-on"></i>
-            <i class="el-icon-star-on"></i>
-            <i class="el-icon-star-off"></i>
+            <el-rate   :colors="['#99A9BF', '#F7BA2A', '#FF9900']" v-model="rating"></el-rate>
           </div>
           <div class="bottom clearfix">
 
@@ -31,7 +27,7 @@
 
             <!-- Add btn -->
             <el-col :span="5">
-              <el-button type="text" class="button" icon="el-icon-plus"></el-button>
+              <el-button type="text" class="button" icon="el-icon-view"></el-button>
             </el-col>
 
           </div>
@@ -47,6 +43,7 @@
     props:['name', 'src'],
     data() {
       return {
+        rating: null,
         currentDate: new Date()
       };
     }
