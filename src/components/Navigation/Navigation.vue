@@ -29,13 +29,13 @@
               <a class="nav-link" href="#">Qui-sommes nous?</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#">Références</a>
+                 <router-link tag="a" class="nav-link" to="/reference">Références</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#">L'équipe</a>
+                 <router-link tag="a" class="nav-link" to="/team">L'équipe</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#">Contact</a>
+                 <router-link tag="a" class="nav-link" to="/contact">Contact</router-link>
             </li>
             <li class="nav-item">
               <a class="nav-link " href="#">
