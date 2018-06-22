@@ -4,6 +4,7 @@ import Home from '@/containers/Home'
 import Products from '@/containers/Products'
 import Contact from '@/containers/Contact'
 import Team from '@/containers/Team'
+import Reference from '@/containers/Reference'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/team',
       name: 'Team',
       component: Team
+    },
+    {
+      path: '/reference',
+      name: 'Reference',
+      component: Reference
     },
   ]
 })
