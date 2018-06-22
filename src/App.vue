@@ -3,7 +3,7 @@
     <top-nav></top-nav>
     <navigation></navigation>
     <router-view/>
-    <Footer></Footer>
+    <Footer class="footer"></Footer>
   </div>
 </template>
 
@@ -32,4 +32,7 @@ export default {
   padding: 0 !important;
 }
 
+.footer{
+  margin-top: 2em;
+}
 </style>
