@@ -5,10 +5,11 @@ img {
   margin-top: 0.5em
 }
 
-.navigation{
+.navigation {
   font-family: 'Oswald', sans-serif;
   font-size: 1em;
 }
+
 a {
   color: #000;
 }
@@ -29,11 +30,16 @@ li:hover {
   cursor: pointer;
 }
 
+li:hover .nav-link {
+  color: #fff;
+  cursor: pointer;
+}
+
 .nav-link {
   display: block;
   padding: 0.2rem 0rem;
 }
 
-button{
+button {
   background-color: #ffa200
 }
