@@ -13,23 +13,23 @@
 
     <section class="contact-form">
       <div class="form-description">
-        <h3>Contact Form</h3>
-        <p>Fill the form and send your message</p>
+        <h3>Formulaire de contact</h3>
+        <p>Remplissez le formulaire et envoyez votre message</p>
       </div>
       <div class="row ">
-        <el-input class="col-4" placeholder="Name" v-model="name"></el-input>
-        <el-input class="col-4" placeholder="Subject" v-model="subject"></el-input>
+        <el-input class="col-4" placeholder="Nom" v-model="name"></el-input>
+        <el-input class="col-4" placeholder="Objet" v-model="subject"></el-input>
         <el-input class="col-4" placeholder="Email" v-model="email"></el-input>
       </div>
 
       <div class="row">
-        <el-input class="col-12 textarea" type="textarea" :rows="6" placeholder="Your message" v-model="message">
+        <el-input class="col-12 textarea" type="textarea" :rows="6" placeholder="Votre message" v-model="message">
         </el-input>
       </div>
 
       <div class="row">
         <div class="text-center col-12">
-          <el-button icon="el-icon-message" class="send-btn">Send Message</el-button>
+          <el-button icon="el-icon-message" class="send-btn">Envoyer un Message</el-button>
         </div>
       </div>
     </section>
