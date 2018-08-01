@@ -5,6 +5,10 @@
         <el-card class="box-card">
           <div>
             <img src="../assets/contact.jpg" alt="">
+            <div class="page-banner">
+              <p class="page-title">Contact</p>
+              <p class="page-subtitle"></p>
+            </div>
           </div>
         </el-card>
       </div>
@@ -77,108 +81,128 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        name,
-        subject,
-        email,
-        message
-      };
-    }
-  };
-
+export default {
+  data() {
+    return {
+      name,
+      subject,
+      email,
+      message
+    };
+  }
+};
 </script>
 
 <style scoped>
-  section {
-    margin-top: 1em;
-  }
+section {
+  margin-top: 1em;
+}
 
-  .service-card {
-    padding: 10px;
-    font-size: 12px;
-    font-family: "Open Sans", sans-serif;
-  }
+.service-card {
+  padding: 10px;
+  font-size: 12px;
+  font-family: "Open Sans", sans-serif;
+}
 
-  i {
+i {
+  color: #fff;
+  font-size: 1em;
+  display: inline-block;
+}
+
+.card-title {
+  margin: auto;
+  font-size: 1.8em;
+  margin: 0.5em;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  color: #3f3f3f;
+}
+
+.form-description {
+  text-align: left;
+  font-family: "Open Sans", sans-serif;
+}
+
+h3 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+}
+
+.card-title h3 {
+  font-size: 0.8em;
+}
+
+.icon-box {
+  font-size: 1.5rem;
+  line-height: 48px;
+  height: 48px;
+  width: 48px;
+  background-color: #ffa200;
+  border-radius: 50%;
+  color: #ffffff;
+  margin-right: 16px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.send-btn {
+  background: #ffa200;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+.textarea {
+  margin-top: 1rem;
+}
+
+.contact-form {
+  background: #fff;
+  padding: 20px;
+}
+
+  .page-banner {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
     color: #fff;
-    font-size: 1em;
-    display: inline-block;
   }
 
-  .card-title {
-    margin: auto;
-    font-size: 1.8em;
-    margin: 0.5em;
-    font-family: "Oswald", sans-serif;
-    text-transform: uppercase;
-    color: #3f3f3f;
+  .page-title {
+    font-family: "Oswald", sans-serif !important;
+    font-weight: 500;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 4rem;
   }
 
-  .form-description {
-    text-align: left;
+  .page-subtitle {
     font-family: "Open Sans", sans-serif;
-  }
-
-  h3 {
-    font-family: "Oswald", sans-serif;
-    font-weight: 600;
-  }
-
-  .card-title h3 {
-    font-size: 0.8em;
-  }
-
-  .icon-box {
-    font-size: 1.5rem;
-    line-height: 48px;
-    height: 48px;
-    width: 48px;
-    background-color: #ffa200;
-    border-radius: 50%;
-    color: #ffffff;
-    margin-right: 16px;
-    display: inline-block;
-    vertical-align: middle;
-  }
-
-
-  .send-btn {
-    background: #FFA200;
-    color: #fff;
-    margin-top: 1rem;
-  }
-
-  .textarea {
-    margin-top: 1rem;
-  }
-
-  .contact-form {
-    background: #fff;
-    padding: 20px;
+    font-weight: 300;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 1rem;
   }
 
   .box-card {
     border: 1px solid #ccc;
+    text-align: left;
   }
+.box-card img {
+  width: 100%;
+  height: 100%;
+}
 
-  .box-card img {
-    width: 100%;
-    height: 100%;
-  }
+.box-card div {
+  padding: 0 !important;
+}
 
-  .box-card div {
-    padding: 0 !important;
-  }
+.el-card__body {
+  padding: 10px !important;
+}
 
-  .el-card__body {
-    padding: 10px !important;
-  }
-
-  img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
 </style>

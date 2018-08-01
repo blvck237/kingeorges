@@ -1,10 +1,18 @@
 <template>
   <div class="container">
-
-    <div class="header">
-      <h3>Meet the team</h3>
-      <p>Lorem ipsum</p>
-    </div>
+    <section class="row">
+      <div class="col-12 ">
+        <el-card class="box-card">
+          <div>
+            <img src="../assets/team.jpg" alt="">
+            <div class="page-banner">
+              <p class="page-title">L'équipe</p>
+              <p class="page-subtitle">Notre équipe</p>
+            </div>
+          </div>
+        </el-card>
+      </div>
+    </section>
 
     <div class="row">
 
@@ -72,7 +80,6 @@
 
 <script>
   export default {};
-
 </script>
 
 <style scoped>
@@ -94,24 +101,49 @@
     font-size: 16px;
   }
 
-  .container {
-    background: #fff;
-    padding: 1em;
+  .row {
+    margin-top: 1em;
+  }
 
+  .page-banner {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    color: #fff;
+  }
+
+  .page-title {
+    font-family: "Oswald", sans-serif !important;
+    font-weight: 500;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 4rem;
+  }
+
+  .page-subtitle {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 1rem;
+  }
+
+  .box-card {
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+
+  .box-card img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .box-card div {
+    padding: 0 !important;
   }
 
   .team-member {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     padding: 0.5em;
   }
-
-.header{
-    font-family: 'Open Sans', sans-serif;
-    text-align: left;
-}
-
-  h3 {
-    font-family: 'Oswald', sans-serif !important;
-  }
-
 </style>
