@@ -26,7 +26,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Qui-sommes nous?</a>
+                <router-link tag="a" class="nav-link" to="/about">Qui-sommes nous?</router-link>
             </li>
             <li class="nav-item">
                  <router-link tag="a" class="nav-link" to="/reference">Références</router-link>
@@ -60,6 +60,5 @@
 </template>
 
 <style scoped>
-  @import "./Navigation.scss";
-
+@import "./Navigation.scss";
 </style>

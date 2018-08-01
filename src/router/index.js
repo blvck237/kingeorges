@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/containers/Home'
 import Products from '@/containers/Products'
 import Contact from '@/containers/Contact'
+import About from '@/containers/About'
 import Team from '@/containers/Team'
 import Reference from '@/containers/Reference'
 
@@ -23,6 +24,11 @@ export default new Router({
       path: '/products',
       name: 'Products',
       component: Products
+    },
+    {
+      path: '/about',
+      name: 'About',
+      component: About
     },
     {
       path: '/contact',
