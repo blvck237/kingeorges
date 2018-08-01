@@ -164,6 +164,7 @@
             src: "https://firebasestorage.googleapis.com/v0/b/king-geor.appspot.com/o/products%2F6.1.jpg?alt=media&token=1541caaf-5295-45ec-a72e-ccfa0defea7a"
           },
         ],
+        products:[],
       };
     },
     firestore() {
