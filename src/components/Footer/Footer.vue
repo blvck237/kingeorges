@@ -58,7 +58,7 @@
 
 <script>
   export default {
-    name: "footer",
+    name: "footer-nav",
     data() {
       return {
         year: new Date().getFullYear()

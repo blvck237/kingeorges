@@ -3,20 +3,20 @@
     <top-nav></top-nav>
     <navigation></navigation>
     <router-view/>
-    <Footer class="footer"></Footer>
+    <footer-nav class="footer"></footer-nav>
   </div>
 </template>
 
 <script>
 import TopNav from "./components/Top-nav/Top-nav";
 import Navigation from "./components/Navigation/Navigation";
-import Footer from "./components/Footer/Footer";
+import FooterNav from "./components/Footer/Footer";
 export default {
   name: "App",
   components: {
     TopNav,
     Navigation,
-    Footer
+    FooterNav
   }
 };
 </script>
