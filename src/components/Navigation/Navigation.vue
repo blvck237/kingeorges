@@ -11,29 +11,20 @@
               <router-link tag="a" class="nav-link" to="/home">Accueil</router-link>
             </li>
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                Produits
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <router-link tag="li" to="/products">Imprimerie</router-link>
-                <router-link tag="li" to="/products">Serigraphie Moderne</router-link>
-                <router-link tag="li" to="/products">Broderie</router-link>
-                <router-link tag="li" to="/products">Impression numerique</router-link>
-              </div>
+            <li class="nav-item">
+              <router-link tag="a" class="nav-link" to="/products">Produits</router-link>
             </li>
             <li class="nav-item">
-                <router-link tag="a" class="nav-link" to="/about">Qui-sommes nous?</router-link>
+              <router-link tag="a" class="nav-link" to="/about">Qui-sommes nous?</router-link>
             </li>
             <li class="nav-item">
-                 <router-link tag="a" class="nav-link" to="/reference">Références</router-link>
+              <router-link tag="a" class="nav-link" to="/reference">Références</router-link>
             </li>
             <li class="nav-item">
-                 <router-link tag="a" class="nav-link" to="/team">L'équipe</router-link>
+              <router-link tag="a" class="nav-link" to="/team">L'équipe</router-link>
             </li>
             <li class="nav-item">
-                 <router-link tag="a" class="nav-link" to="/contact">Contact</router-link>
+              <router-link tag="a" class="nav-link" to="/contact">Contact</router-link>
             </li>
             <li class="nav-item">
               <a class="nav-link " href="#">
@@ -58,5 +49,5 @@
 </template>
 
 <style scoped>
-@import "./Navigation.scss";
+  @import "./Navigation.scss";
 </style>
