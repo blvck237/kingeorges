@@ -15,26 +15,27 @@
     </section>
 
 
-    <section class="contact-form">
-      <div class="form-description">
-        <h3>Formulaire de contact</h3>
-        <p>Remplissez le formulaire et envoyez votre message</p>
+    <section class="text">
+      <div class="history">
+        Créée en janvier 2004 par un groupe de personnes des deux sexes ayant pour même objectifs, la mise sur pied d'une structure
+        de développement orientée vers la production de divers objets de communication conçu et réalisés avec une grande
+        exigence de fiabilité et de qualité :
       </div>
-      <div class="row ">
-        <el-input class="col-4" placeholder="Nom" v-model="name"></el-input>
-        <el-input class="col-4" placeholder="Objet" v-model="subject"></el-input>
-        <el-input class="col-4" placeholder="Email" v-model="email"></el-input>
-      </div>
+      <ul class="services">
+        <li>Conception et réalisation de vos différents projets :</li>
+        <li>Infographie, Montage prépresse.</li>
+        <li>Imprimerie.</li>
+        <li>Sérigraphie sur T-shirts, polos, écharpes, écharpes, sacs, casquettes.</li>
+        <li>Transferts sur tissu blanc, sur tissu de couleur.</li>
+        <li>Tampographie, Marquage des objets plastiques (stylos à billes, clés USB, etc.)</li>
+        <li>Marquage sur objets en faïence : Plats, Tasse.</li>
+        <li>Portes Clés, Badges, etc...</li>
+      </ul>
+      <div class="history">
+        Plusieurs entreprises nous ont fait confiance et continuent à nous faire confiance à ce jour, grâce à : La qualité de nos
+        Prestations notre respect des délais de livraison, notre grande souplesse dans les modalités de paiement notre grande
+        disponibilité à lancer vos travaux dans les brefs délais, une meilleure promotion de vos produits auprès des consommateurs.
 
-      <div class="row">
-        <el-input class="col-12 textarea" type="textarea" :rows="6" placeholder="Votre message" v-model="message">
-        </el-input>
-      </div>
-
-      <div class="row">
-        <div class="text-center col-12">
-          <el-button icon="el-icon-message" class="send-btn">Envoyer un Message</el-button>
-        </div>
       </div>
     </section>
 
@@ -81,147 +82,111 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {};
-  }
-};
+  export default {
+    data() {
+      return {};
+    }
+  };
 </script>
 
 <style scoped>
-section {
-  margin-top: 1em;
-}
+  section {
+    margin-top: 1em;
+  }
 
-.service-card {
-  padding: 10px;
-  font-size: 12px;
-  font-family: "Open Sans", sans-serif;
-}
+  .service-card {
+    padding: 10px;
+    font-size: 12px;
+    font-family: "Open Sans", sans-serif;
+  }
 
-i {
-  color: #fff;
-  font-size: 1em;
-  display: inline-block;
-}
+  i {
+    color: #fff;
+    font-size: 1em;
+    display: inline-block;
+  }
 
-.card-title {
-  margin: auto;
-  font-size: 1.8em;
-  margin: 0.5em;
-  font-family: "Oswald", sans-serif;
-  text-transform: uppercase;
-  color: #3f3f3f;
-}
+  .card-title {
+    margin: auto;
+    font-size: 1.8em;
+    margin: 0.5em;
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    color: #3f3f3f;
+  }
 
-.form-description {
-  text-align: left;
-  font-family: "Open Sans", sans-serif;
-}
+  .card-title h3 {
+    font-size: 0.8em;
+  }
 
-h3 {
-  font-family: "Oswald", sans-serif;
-  font-weight: 600;
-}
+  .icon-box {
+    font-size: 1.5rem;
+    line-height: 48px;
+    height: 48px;
+    width: 48px;
+    background-color: #ffa200;
+    border-radius: 50%;
+    color: #ffffff;
+    margin-right: 16px;
+    display: inline-block;
+    vertical-align: middle;
+  }
 
-.card-title h3 {
-  font-size: 0.8em;
-}
+  .text {
+    background: #fff;
+    padding: 20px;
+    text-align: left
+  }
 
-.icon-box {
-  font-size: 1.5rem;
-  line-height: 48px;
-  height: 48px;
-  width: 48px;
-  background-color: #ffa200;
-  border-radius: 50%;
-  color: #ffffff;
-  margin-right: 16px;
-  display: inline-block;
-  vertical-align: middle;
-}
+  .services{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 
-.send-btn {
-  background: #ffa200;
-  color: #fff;
-  margin-top: 1rem;
-}
+  }
 
-.textarea {
-  margin-top: 1rem;
-}
+  .page-banner {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    color: #fff;
+  }
 
-.contact-form {
-  background: #fff;
-  padding: 20px;
-}
+  .page-title {
+    font-family: "Oswald", sans-serif !important;
+    font-weight: 500;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 4rem;
+  }
 
-.page-banner {
-  position: absolute;
-  bottom: 50px;
-  left: 50px;
-  color: #fff;
-}
+  .page-subtitle {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 1rem;
+  }
 
-.page-title {
-  font-family: "Oswald", sans-serif !important;
-  font-weight: 500;
-  margin: 0 !important;
-  padding: 0 !important;
-  font-size: 4rem;
-}
+  .box-card {
+    border: 1px solid #ccc;
+    text-align: left;
+  }
 
-.page-subtitle {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 300;
-  margin: 0 !important;
-  padding: 0 !important;
-  font-size: 1rem;
-}
+  .box-card img {
+    width: 100%;
+    height: 100%;
+  }
 
-.page-banner {
-  position: absolute;
-  bottom: 50px;
-  left: 50px;
-  color: #fff;
-}
+  .box-card div {
+    padding: 0 !important;
+  }
 
-.page-title {
-  font-family: "Oswald", sans-serif !important;
-  font-weight: 500;
-  margin: 0 !important;
-  padding: 0 !important;
-  font-size: 4rem;
-}
+  .el-card__body {
+    padding: 10px !important;
+  }
 
-.page-subtitle {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 300;
-  margin: 0 !important;
-  padding: 0 !important;
-  font-size: 1rem;
-}
-
-.box-card {
-  border: 1px solid #ccc;
-  text-align: left;
-}
-
-.box-card img {
-  width: 100%;
-  height: 100%;
-}
-
-.box-card div {
-  padding: 0 !important;
-}
-
-.el-card__body {
-  padding: 10px !important;
-}
-
-img {
-  max-width: 100%;
-  max-height: 100%;
-}
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
 </style>
