@@ -21,13 +21,13 @@
         <p>Remplissez le formulaire et envoyez votre message</p>
       </div>
       <div class="row ">
-        <el-input class="col-4" placeholder="Nom" v-model="name"></el-input>
-        <el-input class="col-4" placeholder="Objet" v-model="subject"></el-input>
-        <el-input class="col-4" placeholder="Email" v-model="email"></el-input>
+        <el-input class="col-4" placeholder="Nom"></el-input>
+        <el-input class="col-4" placeholder="Objet"></el-input>
+        <el-input class="col-4" placeholder="Email"></el-input>
       </div>
 
       <div class="row">
-        <el-input class="col-12 textarea" type="textarea" :rows="6" placeholder="Votre message" v-model="message">
+        <el-input class="col-12 textarea" type="textarea" :rows="6" placeholder="Votre message">
         </el-input>
       </div>
 
@@ -84,10 +84,7 @@
 export default {
   data() {
     return {
-      name,
-      subject,
-      email,
-      message
+
     };
   }
 };
