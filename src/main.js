@@ -22,6 +22,7 @@ firebase.initializeApp({
   messagingSenderId: "479648737810"
 })
 export const db = firebase.firestore()
+db.settings({timestampsInSnapshots: true})
 
 Vue.use(ElementUI, {
   locale
