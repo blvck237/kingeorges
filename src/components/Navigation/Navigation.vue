@@ -8,9 +8,7 @@
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <router-link tag="a" class="nav-link" to="/home">Accueil
-                <span class="sr-only">(current)</span>
-              </router-link>
+              <router-link tag="a" class="nav-link" to="/home">Accueil</router-link>
             </li>
 
             <li class="nav-item dropdown">

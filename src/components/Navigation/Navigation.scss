@@ -24,14 +24,8 @@ li {
   padding-right: 0.5em;
 }
 
-li:hover {
-  background: #ffa200;
-  color: #fff;
-  cursor: pointer;
-}
-
 li:hover .nav-link {
-  color: #fff;
+  color: #ffa200;
   cursor: pointer;
 }
 
@@ -41,5 +35,13 @@ li:hover .nav-link {
 }
 
 button {
-  background-color: #ffa200
+  // background-color: #ffa200
+}
+
+.router-link-active{
+  background-color: #ffa200;
+  color: #fff;
+}
+.router-link-active:hover {
+  color: #fff !important;
 }
