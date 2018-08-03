@@ -1,5 +1,6 @@
 .el-card {
-  border: 1px solid #CCC
+  border: 1px solid #CCC;
+  font-family: 'Open sans', sans-serif !important;
 }
 
 .bottom {
@@ -11,8 +12,17 @@
 
 .button {
   border-radius: 0 !important;
+  cursor: pointer;
+  font-family: 'Open sans', sans-serif !important;
+}
+.button:hover, .button:hover .button {
+background: #FFA200;
+color: #fff;
 }
 
+.el-button{
+  font-family: 'Open sans', sans-serif !important;
+}
 .prodcard{
   padding: 5px
 }
@@ -37,16 +47,28 @@
 
 .prod-name{
   font-size: 14px;
-  font-weight: 500
+  font-weight: 700;
+  font-family: 'Open sans', sans-serif !important;
 }
 
 .prod-rating{
   color: #FFA200;
   font-size: 12px
 }
+
+.prod-model{
+  color: #d2d2d2;
+  font-size: 12px;
+  font-family: 'Open sans', sans-serif !important;
+}
+
+.view-btn{
+  border-right: 1px solid #CCC;
+}
 .image {
   width: 100%;
   display: block;
+  cursor: pointer;
   padding-bottom: 10px;
 }
 
