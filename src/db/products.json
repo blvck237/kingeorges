@@ -1,0 +1,81 @@
+[
+    {
+        "id": "1",
+        "name": "T-shirt",
+        "model": "Coton et Polyester",
+        "description": "T-shirt serigraphié au plastisol en quadrichromie. 50% Coton et 50% Polyester",
+        "img": "https://firebasestorage.googleapis.com/v0/b/king-geor.appspot.com/o/products%2F6.1.jpg?alt=media&token=1541caaf-5295-45ec-a72e-ccfa0defea7a",
+        "category": [
+            "Conception",
+            "Creation Graphique",
+            "Serigraphie"
+        ],
+        "in_stock": true
+    },
+    {
+        "id": "2",
+        "name": "Stylo Acrylique",
+        "model": "Polyester",
+        "description": "Stylo Acrylique",
+        "img": "https://firebasestorage.googleapis.com/v0/b/king-geor.appspot.com/o/products%2F1.1.jpg?alt=media&token=ad03a6ed-fed1-465a-b84b-d0f76223facb",
+        "category": [
+            "Conception",
+            "Creation Graphique",
+            "Serigraphie",
+            "Gravure"
+        ],
+        "in_stock": true
+    },
+    {
+        "id": "3",
+        "name": "T-shirt",
+        "model": "Coton et Polyester",
+        "description": "T-shirt serigraphié au plastisol en quadrichromie. 50% Coton et 50% Polyester",
+        "img": "https://firebasestorage.googleapis.com/v0/b/king-geor.appspot.com/o/products%2F6.1.jpg?alt=media&token=1541caaf-5295-45ec-a72e-ccfa0defea7a",
+        "category": [
+            "Conception",
+            "Creation Graphique",
+            "Serigraphie"
+        ],
+        "in_stock": true
+    },
+    {
+        "id": "1",
+        "name": "T-shirt",
+        "model": "Coton et Polyester",
+        "description": "T-shirt serigraphié au plastisol en quadrichromie. 50% Coton et 50% Polyester",
+        "img": "https://firebasestorage.googleapis.com/v0/b/king-geor.appspot.com/o/products%2F6.1.jpg?alt=media&token=1541caaf-5295-45ec-a72e-ccfa0defea7a",
+        "category": [
+            "Conception",
+            "Creation Graphique",
+            "Serigraphie"
+        ],
+        "in_stock": true
+    },
+    {
+        "id": "1",
+        "name": "T-shirt",
+        "model": "Coton et Polyester",
+        "description": "T-shirt serigraphié au plastisol en quadrichromie. 50% Coton et 50% Polyester",
+        "img": "https://firebasestorage.googleapis.com/v0/b/king-geor.appspot.com/o/products%2F6.1.jpg?alt=media&token=1541caaf-5295-45ec-a72e-ccfa0defea7a",
+        "category": [
+            "Conception",
+            "Creation Graphique",
+            "Serigraphie"
+        ],
+        "in_stock": true
+    },
+    {
+        "id": "1",
+        "name": "T-shirt",
+        "model": "Coton et Polyester",
+        "description": "T-shirt serigraphié au plastisol en quadrichromie. 50% Coton et 50% Polyester",
+        "img": "https://firebasestorage.googleapis.com/v0/b/king-geor.appspot.com/o/products%2F6.1.jpg?alt=media&token=1541caaf-5295-45ec-a72e-ccfa0defea7a",
+        "category": [
+            "Conception",
+            "Creation Graphique",
+            "Serigraphie"
+        ],
+        "in_stock": true
+    }
+]
