@@ -12,7 +12,7 @@
             </li>
 
             <li class="nav-item">
-              <router-link tag="a" class="nav-link" to="/products">Produits</router-link>
+              <router-link tag="a" class="nav-link"  :to="{ name: 'Products', params: { activeName: 'embroidery' }}">Produits</router-link>
             </li>
             <li class="nav-item">
               <router-link tag="a" class="nav-link" to="/about">Qui-sommes nous?</router-link>
