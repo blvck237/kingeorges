@@ -2,29 +2,37 @@
   <el-row class="tac">
     <el-col :span="12">
       <!-- Navigation title -->
-      <el-menu  class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
+      <el-menu class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
         <div class="nav-title">Nos Services</div>
+
         <el-menu-item index="1">
-          <span>Broderie</span>
+          <router-link tag="a" :to="{ name: 'Products', params: { activeName: 'embroidery' }}">Broderie</router-link>
         </el-menu-item>
+
         <el-menu-item index="2">
-          <span>Conception</span>
+          <router-link tag="a" :to="{ name: 'Products', params: { activeName: 'conception' }}">Creation Graphique</router-link>
         </el-menu-item>
-        <el-menu-item index="3" >
-          <span>Creation Graphique</span>
+
+        <el-menu-item index="3">
+          <router-link tag="a" :to="{ name: 'Products', params: { activeName: 'printmaking' }}">Gravure</router-link>
         </el-menu-item>
+
         <el-menu-item index="4">
-          <span>Gravure</span>
+          <router-link tag="a" :to="{ name: 'Products', params: { activeName: 'dgt-printing' }}">Impression Numerique</router-link>
         </el-menu-item>
+
         <el-menu-item index="5">
-          <span>Impression Numerique</span>
+          <router-link tag="a" :to="{ name: 'Products', params: { activeName: 'offset-printing' }}">Impression Offset</router-link>
         </el-menu-item>
+
         <el-menu-item index="6">
-          <span>Sérigraphie</span>
+          <router-link tag="a" :to="{ name: 'Products', params: { activeName: 'serigraphy' }}">Sérigraphie</router-link>
         </el-menu-item>
+
         <el-menu-item index="7">
-          <span>Conseil</span>
+          <router-link tag="a" :to="{ name: 'Products', params: { activeName: 'Conseil' }}">Conseil</router-link>
         </el-menu-item>
+
       </el-menu>
     </el-col>
 
@@ -34,18 +42,18 @@
 
 
 <script>
-export default {
-  methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
-    },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
+  export default {
+    methods: {
+      handleOpen(key, keyPath) {
+        console.log(key, keyPath);
+      },
+      handleClose(key, keyPath) {
+        console.log(key, keyPath);
+      }
     }
-  }
-};
+  };
 </script>
 
 <style scoped>
-@import './SideNav.scss';
+  @import "./SideNav.scss";
 </style>
