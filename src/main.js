@@ -11,7 +11,11 @@ import 'firebase/firestore'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
 import locale from 'element-ui/lib/locale/lang/en'
+import VueProgressiveImage from 'vue-progressive-image'
 
+Vue.use(VueProgressiveImage, {
+  placeholder: './assets/1.jpg'
+})
 Vue.use(VueFire)
 firebase.initializeApp({
   apiKey: "AIzaSyAotALjGQaaMufKG98VFUfyk7RUXGNWyds",
@@ -22,7 +26,7 @@ firebase.initializeApp({
   messagingSenderId: "479648737810"
 })
 export const db = firebase.firestore()
-db.settings({timestampsInSnapshots: true})
+db.settings({ timestampsInSnapshots: true })
 
 Vue.use(ElementUI, {
   locale
