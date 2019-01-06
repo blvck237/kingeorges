@@ -27,7 +27,7 @@
           :src="product.src"
           :name="product.name"
           :product="product"
-          class="col-md-12"
+          class="col-md-4"
         ></ProductCard>
       </div>
     </section>
@@ -45,7 +45,7 @@ export default {
   data() {
     return {
       product: {},
-      similarProducts: ([] = this.getSimilarProducts())
+      similarProducts:[]
     };
   },
   methods: {
@@ -68,9 +68,8 @@ export default {
     }
   },
   beforeMount() {
-    this.getSimilarProducts();
+    this.similarProducts = this.getSimilarProducts();
     this.product = this.$route.params.product;
-    console.log("Params: ", this.$route.params.product);
   }
 };
 </script>
