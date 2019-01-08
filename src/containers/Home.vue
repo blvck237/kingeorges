@@ -157,21 +157,38 @@
       });
       return productList
     },
-    addToNewsletter(email) {
-      console.log(email)
-      db.collection("newsletter").doc().set({
-        email: email
-      }).then(
-        email = "",
-        this.displayMessage()
-      )
-    },
-        displayMessage() {
+    displayMessage(msg, msgType) {
       this.$message({
         showClose: true,
-        message: "Vous avez souscris à notre newsletter avec succès",
-        type: "success"
+        message: msg,
+        type: msgType
       });
+    },
+    validateEmail(email) {
+      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+    },
+    addToNewsletter(email) {
+      var msg = "";
+      var msgType = "";
+      if (this.validateEmail(email)) {
+        msg = "Vous avez souscris à notre newsletter avec succès",
+        msgType = "success",
+        db.collection("newsletter").doc().set({
+          email: email
+          }).then(
+            email = "",
+            this.displayMessage(msg, msgType)
+        )
+      } else {
+        msg = "Entrez une adresse email valide!",
+        msgType = "error",
+        this.displayMessage(msg, msgType)
+      }
+      return false;
+    },
+    addToCart(){
+      
     }
     },
 
