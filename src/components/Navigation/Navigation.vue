@@ -36,9 +36,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                <i class="el-icon-goods"></i>
-              </a>
+              <router-link tag="a" class="nav-link" to="/cart"><i class="el-icon-goods"></i></router-link>
             </li>
           </ul>
         </div>

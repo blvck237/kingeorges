@@ -7,6 +7,7 @@ import Contact from '@/containers/Contact'
 import About from '@/containers/About'
 import Team from '@/containers/Team'
 import Reference from '@/containers/Reference'
+import Cart from '@/containers/Cart'
 
 Vue.use(Router)
 
@@ -50,6 +51,11 @@ export default new Router({
       path: '/reference',
       name: 'Reference',
       component: Reference
+    },
+    {
+      path: '/cart',
+      name: 'Cart',
+      component: Cart
     },
   ]
 })
