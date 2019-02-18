@@ -16,12 +16,11 @@
 
     <section>
       <el-tabs v-model="activeName">
-        <el-tab-pane label="Broderie" name="embd">
+        <el-tab-pane label="Broderie" name="embroidery">
           <transition name="fade">
             <section class="row">
               <ProductCard
-                v-for="product in productList"
-                v-if="testEmbd(product)"
+                v-for="product in embdProducts"
                 :key="product.index"
                 :model="product.model"
                 :src="product.src"
@@ -33,11 +32,10 @@
           </transition>
         </el-tab-pane>
 
-        <el-tab-pane label="Conception" name="conception">
+        <el-tab-pane label="Creation Graphique" name="conception">
           <section class="row">
             <ProductCard
               v-for="product in concProducts"
-              v-if="testConc(product)"
               :key="product.index"
               :model="product.model"
               :src="product.src"
@@ -51,8 +49,7 @@
         <el-tab-pane label="Gravure" name="printmaking">
           <section class="row">
             <ProductCard
-              v-for="product in concProducts"
-              v-if="testPrtm(product)"
+              v-for="product in prtmProducts"
               :key="product.index"
               :model="product.model"
               :src="product.src"
@@ -66,8 +63,7 @@
         <el-tab-pane label="Impression Numerique" name="dgt-printing">
           <section class="row">
             <ProductCard
-              v-for="product in concProducts"
-              v-if="testDprt(product)"
+              v-for="product in dprtProducts"
               :key="product.index"
               :model="product.model"
               :src="product.src"
@@ -81,8 +77,7 @@
         <el-tab-pane label="Impression Offset" name="offset-printing">
           <section class="row">
             <ProductCard
-              v-for="product in productList"
-              v-if="testOprt(product)"
+              v-for="product in oprtProducts"
               :key="product.index"
               :model="product.model"
               :src="product.src"
@@ -96,8 +91,7 @@
         <el-tab-pane label="Serigraphie" name="serigraphy">
           <section class="row">
             <ProductCard
-              v-for="product in productList"
-              v-if="testSrgh(product)"
+              v-for="product in srghProducts"
               :key="product.index"
               :model="product.model"
               :src="product.src"
@@ -109,23 +103,13 @@
         </el-tab-pane>
       </el-tabs>
     </section>
-
-    <!--     
-
-    <section class="row">
-
-    </section>
-
-    <section class="row">
-      <ProductCard v-for="product in productList" :key="product.index" :src="product.img" :model="product.model" :name="product.name"
-        class="col-3"></ProductCard>
-    </section>-->
   </div>
 </template>
 
 <script>
 import { db } from "../main";
 import ProductCard from "../components/Product-Card/Product-Card";
+import * as _ from "lodash";
 export default {
   name: "Products",
   components: {
@@ -151,53 +135,29 @@ export default {
           querySnapshot.forEach(product => {
             productList.push(product.data());
           });
+        })
+        .then(success => {
+          this.sortProducts();
         });
       console.log("Prods: ", productList);
       return productList;
     },
     sortProducts() {
       let products = this.productList;
-      for (let i = 0; i < products.length; i++) {
-        for (let j = 0; j < products[i].category.length; j++) {
-          if (products[i].category[j].includes("embd"))
-            this.embdProducts.push(products[i]);
-          else if (products[i].category[j].includes("conc"))
-            this.concProducts.push(products[i]);
-          else if (products[i].category[j].includes("dprt"))
-            this.dprtProducts.push(products[i]);
-          else if (products[i].category[j].includes("prtm"))
-            this.prtmProducts.push(products[i]);
-          else if (products[i].category[j].includes("srgh"))
-            this.srghProducts.push(products[i]);
-          else if (products[i].category[j].includes("oprt"))
-            this.oprtProducts.push(products[i]);
-        }
-      }
-    },
-    testOprt(product) {
-      if (product.category === "oprt") return true;
-    },
-    testSrgh(product) {
-      if (product.category === "srgh") return true;
-    },
-    testConc(product) {
-      if (product.category === "conc") return true;
-    },
-    testPrtm(product) {
-      if (product.category === "prtm") return true;
-    },
-    testEmbd(product) {
-      if (product.category === "embd") return true;
-    },
-    testDprt(product) {
-      if (product.category === "dprt") return true;
+      this.oprtProducts = _.filter(products, ["category", "oprt"]);
+			console.log('TCL: sortProducts -> this.oprtProducts', this.oprtProducts)
+      this.srghProducts = _.filter(products, ["category", "srgh"]);
+      this.concProducts = _.filter(products, ["category", "conc"]);
+      this.prtmProducts = _.filter(products, ["category", "prtm"]);
+      this.embdProducts = _.filter(products, ["category", "embd"]);
+      this.dprtProducts = _.filter(products, ["category", "dprt"]);
     }
   },
   beforeMount() {
     this.productList = this.getProducts();
     this.activeName = this.$route.params.activeName;
     console.log("Params: ", this.$route.params.activeName);
-    this.sortProducts();
+    // this.sortProducts();
   },
   created() {
     this.activeName = this.$route.params.activeName;
