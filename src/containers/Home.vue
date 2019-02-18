@@ -6,7 +6,7 @@
         <SideNav></SideNav>
       </div>
       <div class="col-md-9">
-        <Carousel></Carousel>
+        <Carousel :images="carouselImages"></Carousel>
       </div>
     </section>
 
@@ -138,12 +138,9 @@
     },
     data() {
       return {
-        productList:[] = this.getProducts()
+        productList:[] = this.getProducts(),
+        carouselImages:[] = this.getCarouselImages(),
       };
-    },
-    firestore() {
-      return {
-      }
     },
     methods: {
       getProducts() {
@@ -151,11 +148,20 @@
       db.collection("products").get().then((querySnapshot) => {
         querySnapshot.forEach((product) => {
         productList.push(product.data()) 
-        console.log(`${product.id} => ${product.data()}`);
-        console.log(productList);
         });
       });
+      console.log('TCL: getProducts -> productList', productList)
       return productList
+    },
+      getCarouselImages() {
+      var carouselImaeges = [];
+      db.collection("banner").get().then((querySnapshot) => {
+        querySnapshot.forEach((carouselImage) => {
+        carouselImaeges.push(carouselImage.data()) 
+        });
+      });
+			console.log('TCL: getCarouselImages -> carouselImaeges', carouselImaeges)
+      return carouselImaeges
     },
     displayMessage(msg, msgType) {
       this.$message({
@@ -194,6 +200,7 @@
 
     beforeMount (){
       this.getProducts();
+      this.getCarouselImages();
     }
 
   };
