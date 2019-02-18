@@ -53,7 +53,7 @@ export default {
       var productList = [];
       db.collection("products")
         .where("category", "==", this.$route.params.product.category)
-        .limit(5)
+        .limit(6)
         .get()
         .then(similarProducts => {
           similarProducts.forEach(similarProduct => {
