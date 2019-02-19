@@ -1,0 +1,65 @@
+.top-nav {
+  background: #3C3C3C;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.fa-phone {
+  margin-left: 0.5em;
+}
+
+.contact {
+  font-size: 12px !important;
+  vertical-align: middle;
+  text-align: center;
+  margin: auto;
+  cursor: default !important;
+}
+
+.form-group {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+ul.nav li.menu-text a:hover {
+  background-color: gray !important;
+}
+.form-control:focus {
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.btn-link {
+  font-size: 12px !important;
+  color: #fff;
+  padding: 0 8px;
+  border-radius: 0;
+  padding: .375rem .75rem;
+  display: block;
+  border-right: 1px solid #020202;
+  box-shadow: 1px 0 0 0 #888888;
+}
+
+.btn-link:hover {
+  text-decoration: none !important;
+  color: #FFA200
+}
+
+.form-control {
+  border-radius: 0 !important;
+  width: auto;
+  border: none !important;
+  padding: .25rem .75rem !important;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #ffffff;
+  background-color: #3c3c3c;
+  background-clip: padding-box;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+
+select option:focus{
+  background:#FFA200;
+  color:green;
+}

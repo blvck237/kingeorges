@@ -1,0 +1,83 @@
+.el-card {
+  border: 1px solid #CCC;
+  font-family: 'Open sans', sans-serif !important;
+}
+
+.bottom {
+  border-top: 1px solid #CCC;
+  margin-top: 5px;
+  text-align: center;
+  line-height: 12px;
+}
+
+.button {
+  border-radius: 0 !important;
+  cursor: pointer;
+  font-family: 'Open sans', sans-serif !important;
+}
+.button:hover, .button:hover .button {
+background: #FFA200;
+color: #fff;
+}
+
+.el-button{
+  font-family: 'Open sans', sans-serif !important;
+}
+.prodcard{
+  padding: 5px
+}
+.el-col-14 {
+  color: white !important;
+  border-left: 1px solid #CCC;
+  border-right: 1px solid #CCC;
+  background-color: #FFA200; 
+}
+
+.el-button--text {
+  color: #000;
+}
+
+.el-icon-right{
+  margin-right: 5px
+}
+
+.el-col-14 > .el-button--text {
+  color: #fff;
+}
+
+.prod-name{
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Open sans', sans-serif !important;
+}
+
+.prod-rating{
+  color: #FFA200;
+  font-size: 12px
+}
+
+.prod-model{
+  color: #d2d2d2;
+  font-size: 12px;
+  font-family: 'Open sans', sans-serif !important;
+}
+
+.view-btn{
+  border-right: 1px solid #CCC;
+}
+.image {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  padding-bottom: 10px;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both
+}

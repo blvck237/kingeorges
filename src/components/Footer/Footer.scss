@@ -1,0 +1,42 @@
+.footer {
+  background: #2A2A2A;
+  color: #fff;
+  padding: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #FFA200;
+}
+
+.footer-link {
+  font-family: 'Oswald', sans-serif;
+  color: #fff;
+  text-decoration: none;
+  padding: 0 1.2em 0 1.5em;
+  font-size: 1.2em;
+  border-right: 1px solid #020202;
+  -webkit-box-shadow: 1px 0 0 0 #888888;
+  box-shadow: 1px 0 0 0 #888888;
+}
+
+.el-footer {
+  height: auto !important;
+}
+
+.logo {
+  margin-top: 2em;
+}
+
+.bottom {
+    // background: #3C3C3C;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 2em;
+  font-weight: 100;
+  font-size: 0.8em;
+}
