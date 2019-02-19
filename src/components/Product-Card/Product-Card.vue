@@ -3,16 +3,18 @@
     <el-col class="prodcard" :span="24">
       <!-- Card -->
       <el-card :body-style="{ padding: '0px' }">
-        <router-link tag="a" :to="{ name: 'ProductDetails', params: { product: product }}">
+        <router-link
+          :to="{ name: 'ProductDetails', params: { product: product, name: product.name+product.model+' '+'details' }}"
+        >
           <progressive-img
-          :src="src"
-          placeholder=".../../assets/1.jpg"
-          :blur="50"
-          fallback=".../../assets/1.jpg"
-          class="image"
-        />
+            :src="src"
+            placeholder=".../../assets/1.jpg"
+            :blur="50"
+            fallback=".../../assets/1.jpg"
+            class="image"
+          />
         </router-link>
-        
+
         <div>
           <!-- Product name -->
           <span class="prod-name">{{name}}</span>
@@ -21,7 +23,10 @@
           <div class="bottom clearfix">
             <!-- View button -->
             <el-col :span="12" class="button">
-              <router-link tag="a" :to="{ name: 'ProductDetails', params: { product: product }}" >
+              <router-link
+                tag="a"
+                :to="{ name: 'ProductDetails', params: { product: product, name: product.name+product.model+' '+'details' }}"
+              >
                 <el-button type="text" class="action-btn" icon="el-icon-view"></el-button>
               </router-link>
             </el-col>
