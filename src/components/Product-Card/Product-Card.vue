@@ -4,34 +4,25 @@
 
       <!-- Card -->
       <el-card :body-style="{ padding: '0px' }">
-        <img src="../../assets/2.2.jpg" class="image">
+        <img :src='src' class="image">
         <div>
             <!-- Product name -->
-          <span class="prod-name">Sac serigraphie</span>
+          <span class="prod-name">{{name}}</span>
           <!-- Product Rating -->
-          <div class="prod-rating">
-            <i class="el-icon-star-on"></i>
-            <i class="el-icon-star-on"></i>
-            <i class="el-icon-star-on"></i>
-            <i class="el-icon-star-on"></i>
-            <i class="el-icon-star-off"></i>
+          <div class="prod-model">
+            {{model}}
           </div>
           <div class="bottom clearfix">
 
-            <!-- Star button -->
-            <el-col :span="5">
-              <el-button type="text" class="button" icon="el-icon-star-on"></el-button>
+            <!-- View button -->
+            <el-col :span="12" class="button view-btn">
+              <el-button type="text" class="button" icon="el-icon-view"></el-button>
             </el-col>
 
             <!-- Add to cart button -->
-            <el-col :span="14">
-              <el-button type="text" class="button mid-btn">
-                <i class="el-icon-goods el-icon-right"></i>Ajouter au panier</el-button>
-            </el-col>
-
-            <!-- Add btn -->
-            <el-col :span="5">
-              <el-button type="text" class="button" icon="el-icon-plus"></el-button>
+            <el-col :span="12" class="button cmd-btn">
+              <el-button type="text" class="button">
+                <i class="el-icon-goods el-icon-right"></i></el-button>
             </el-col>
 
           </div>
@@ -43,18 +34,18 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        currentDate: new Date()
-      };
-    }
-  };
-
+export default {
+  props: ["name", "src", "model"],
+  data() {
+    return {
+      rating: null,
+      currentDate: new Date()
+    };
+  }
+};
 </script>
 
 
 <style scoped>
-  @import "./Product-Card.scss";
-
+@import "./Product-Card.scss";
 </style>

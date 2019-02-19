@@ -6,27 +6,27 @@
       <div class="row">
 
         <div class="col-md-2 footer-link">
-          <a href="">Accueil</a>
+          <router-link tag="a" to="/home">Accueil</router-link>
         </div>
 
         <div class="col-md-2 footer-link">
-          <a href="">Produits</a>
+          <router-link tag="a" to="/products">Produits</router-link>
         </div>
 
         <div class="col-md-2 footer-link">
-          <a href="">Qui Sommes-nous?</a>
+          <router-link tag="a" to="/about">Qui Sommes-nous?</router-link>
         </div>
 
         <div class="col-md-2 footer-link">
-          <a href="">Références</a>
+          <router-link tag="a" to="/reference">Références</router-link>
         </div>
 
         <div class="col-md-2 footer-link">
-          <a href="">L'équipe</a>
+          <router-link tag="a" to="/team">L'équipe</router-link>
         </div>
 
         <div class="col-md-2 footer-link">
-          <a href="">Contact</a>
+          <router-link tag="a" to="/contact">Contact</router-link>
         </div>
 
 
@@ -53,17 +53,15 @@
 
 <style>
   @import "./Footer.scss";
-
 </style>
 
 <script>
   export default {
-    name: "footer",
+    name: "footer-nav",
     data() {
       return {
         year: new Date().getFullYear()
-      }
+      };
     }
   };
-
 </script>

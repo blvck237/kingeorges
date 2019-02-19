@@ -50,9 +50,9 @@
 
       <div class="col-md-9">
         <h3 class="row-title">Nos produits</h3>
-        <el-carousel indicator-position="none" :interval="10000" type="card" height="600px">
-          <el-carousel-item v-for="item in 6" :key="item">
-            <ProductCard class="col-md-12"></ProductCard>
+        <el-carousel indicator-position="none" :interval="5000" type="card" height="600px">
+          <el-carousel-item v-for="product in productList" :key="product.index">
+            <ProductCard :model='product.model' :src="product.src" :name="product.name" class="col-md-12"></ProductCard>
           </el-carousel-item>
         </el-carousel>
       </div>
@@ -116,6 +116,9 @@
 </script>
 
 <script>
+  import {
+    db
+  } from '../main'
   import SideNav from "../components/SideNav/SideNav";
   import Carousel from "../components/Carousel/Carousel";
   import AdCarousel from "../components/Ad-Carousel/Ad-Carousel";
@@ -134,9 +137,62 @@
       AdCarousel
     },
     data() {
-      return {};
+      return {
+        productList: [
+          {
+            name: "Stylo Acrylique",
+            model: "model",
+            src: "https://firebasestorage.googleapis.com/v0/b/king-geor.appspot.com/o/products%2F1.1.jpg?alt=media&token=ad03a6ed-fed1-465a-b84b-d0f76223facb"
+          },
+          {
+            name: "Sac en cotton",
+            model: "model",
+            src: "https://firebasestorage.googleapis.com/v0/b/king-geor.appspot.com/o/products%2F2.2.jpg?alt=media&token=f379f6aa-ebf9-494e-b9d4-6b4220f30ee3"
+          },
+          {
+            name: "Papier offset",
+            model: "model",
+            src: "https://firebasestorage.googleapis.com/v0/b/king-geor.appspot.com/o/products%2F3.1.jpg?alt=media&token=6c310157-d144-419c-88a7-3455be8dbba7"
+          },
+          {
+            name: "Carte de Visite",
+            model: "model",
+            src: "https://firebasestorage.googleapis.com/v0/b/king-geor.appspot.com/o/products%2F4.1.jpg?alt=media&token=4f0a4f51-7608-42d4-8d02-bb0c50328877"
+          },
+          {
+            name: "Chemise A4",
+            model: "model",
+            src: "https://firebasestorage.googleapis.com/v0/b/king-geor.appspot.com/o/products%2F5.1.jpg?alt=media&token=b737a267-5181-42c5-af0b-a781a29a58e3"
+          },
+          {
+            name: "T-shirt",
+            model: "model",
+            src: "https://firebasestorage.googleapis.com/v0/b/king-geor.appspot.com/o/products%2F6.1.jpg?alt=media&token=1541caaf-5295-45ec-a72e-ccfa0defea7a"
+          },
+        ],
+        products:[],
+      };
     },
-    methods: {}
+    firestore() {
+      return {
+      }
+    },
+    methods: {
+      getProducts() {
+      db.collection("products").get().then((querySnapshot) => {
+        querySnapshot.forEach((product) => {
+          this.products.push(product.data()) 
+          console.log(`${product.id} => ${product.data()}`);
+          console.log(this.products);
+        });
+      });
+    }
+    },
+
+    beforeMount (){
+      this.getProducts();
+    }
+
   };
 
 </script>

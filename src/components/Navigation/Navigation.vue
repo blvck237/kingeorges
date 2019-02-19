@@ -8,34 +8,23 @@
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Accueil
-                <span class="sr-only">(current)</span>
-              </a>
+              <router-link tag="a" class="nav-link" to="/home">Accueil</router-link>
             </li>
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                Produits
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Imprimerie</a>
-                <a class="dropdown-item" href="#">Serigraphie Moderne</a>
-                <a class="dropdown-item" href="#">Broderie</a>
-                <a class="dropdown-item" href="#">Impression numerique</a>
-              </div>
+            <li class="nav-item">
+              <router-link tag="a" class="nav-link"  :to="{ name: 'Products', params: { activeName: 'embroidery' }}">Produits</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Qui-sommes nous?</a>
+              <router-link tag="a" class="nav-link" to="/about">Qui-sommes nous?</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#">Références</a>
+              <router-link tag="a" class="nav-link" to="/reference">Références</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#">L'équipe</a>
+              <router-link tag="a" class="nav-link" to="/team">L'équipe</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#">Contact</a>
+              <router-link tag="a" class="nav-link" to="/contact">Contact</router-link>
             </li>
             <li class="nav-item">
               <a class="nav-link " href="#">
@@ -61,5 +50,4 @@
 
 <style scoped>
   @import "./Navigation.scss";
-
 </style>

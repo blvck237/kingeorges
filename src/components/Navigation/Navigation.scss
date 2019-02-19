@@ -5,10 +5,11 @@ img {
   margin-top: 0.5em
 }
 
-.navigation{
+.navigation {
   font-family: 'Oswald', sans-serif;
   font-size: 1em;
 }
+
 a {
   color: #000;
 }
@@ -18,13 +19,14 @@ a:hover {
 }
 
 li {
-  color: #fff;
+  color: #000;
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
 
-li:hover {
-  background: #ffa200;
+li:hover .nav-link {
+  color: #ffa200;
+  cursor: pointer;
 }
 
 .nav-link {
@@ -32,6 +34,14 @@ li:hover {
   padding: 0.2rem 0rem;
 }
 
-button{
-  background-color: #ffa200
+button {
+  // background-color: #ffa200
+}
+
+.router-link-active{
+  background-color: #ffa200;
+  color: #fff;
+}
+.router-link-active:hover {
+  color: #fff !important;
 }
