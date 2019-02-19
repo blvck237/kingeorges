@@ -2,10 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/containers/Home'
 import Products from '@/containers/Products'
+import ProductDetails from '@/containers/ProductDetails'
 import Contact from '@/containers/Contact'
 import About from '@/containers/About'
 import Team from '@/containers/Team'
 import Reference from '@/containers/Reference'
+import Cart from '@/containers/Cart'
 
 Vue.use(Router)
 
@@ -26,6 +28,11 @@ export default new Router({
       component: Products
     },
     {
+      path: '/product/:name',
+      name: 'ProductDetails',
+      component: ProductDetails
+    },
+    {
       path: '/about',
       name: 'About',
       component: About
@@ -44,6 +51,11 @@ export default new Router({
       path: '/reference',
       name: 'Reference',
       component: Reference
+    },
+    {
+      path: '/cart',
+      name: 'Cart',
+      component: Cart
     },
   ]
 })

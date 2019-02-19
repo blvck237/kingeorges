@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <section class="row">
-      <div class="col-12 ">
+      <div class="col-12">
         <el-card class="box-card">
           <div>
-            <img src="../assets/contact.jpg" alt="">
+            <img src="../assets/contact.jpg" alt>
             <div class="page-banner">
               <p class="page-title">Contact</p>
               <p class="page-subtitle"></p>
@@ -14,32 +14,42 @@
       </div>
     </section>
 
-
     <section class="contact-form">
       <div class="form-description">
         <h3>Formulaire de contact</h3>
         <p>Remplissez le formulaire et envoyez votre message</p>
       </div>
-      <div class="row ">
-        <el-input class="col-4" placeholder="Nom"></el-input>
-        <el-input class="col-4" placeholder="Objet"></el-input>
-        <el-input class="col-4" placeholder="Email"></el-input>
-      </div>
-
-      <div class="row">
-        <el-input class="col-12 textarea" type="textarea" :rows="6" placeholder="Votre message">
-        </el-input>
-      </div>
-
-      <div class="row">
-        <div class="text-center col-12">
-          <el-button icon="el-icon-message" class="send-btn">Envoyer un Message</el-button>
+      <el-form>
+        <div class="row">
+          <el-input class="col-4" v-model="name" placeholder="Nom" required></el-input>
+          <el-input class="col-4" v-model="object" placeholder="Objet"></el-input>
+          <el-input class="col-4" v-model="email" placeholder="Email"></el-input>
         </div>
-      </div>
+
+        <div class="row">
+          <el-input
+            class="col-12 textarea"
+            v-model="msg"
+            type="textarea"
+            :rows="6"
+            placeholder="Votre message"
+          ></el-input>
+        </div>
+
+        <div class="row">
+          <div class="text-center col-12">
+            <el-button
+              icon="el-icon-message"
+              @click="sendMessage()"
+              class="send-btn"
+              :disabled="formComplete()"
+            >Envoyer un Message</el-button>
+          </div>
+        </div>
+      </el-form>
     </section>
 
     <section class="row">
-
       <div class="col-md-4 service-card">
         <el-card shadow="always">
           <div class="card-title">
@@ -47,8 +57,7 @@
               <i class="fas fa-truck"></i>
             </span>
             <b>Livraison gratuite</b>
-          </div>
-          Personalisez vos produits chez King Georges et faites vous les livrer gratuitement.
+          </div>Personalisez vos produits chez King Georges et faites vous les livrer gratuitement.
         </el-card>
       </div>
 
@@ -59,8 +68,7 @@
               <i class="fas fa-phone"></i>
             </span>
             <b>SUPPORT 7J/7</b>
-          </div>
-          Nous vous apportons de l'assisstance tous les jours de la semaine.
+          </div>Nous vous apportons de l'assisstance tous les jours de la semaine.
         </el-card>
       </div>
 
@@ -71,21 +79,82 @@
               <i class="fas fa-hand-holding-usd"></i>
             </span>
             <b>QUALITÉ-PRIX</b>
-          </div>
-          Nous vous offrons de le bonne qualité à des prix adorables.
+          </div>Nous vous offrons de le bonne qualité à des prix adorables.
         </el-card>
       </div>
     </section>
   </div>
-
 </template>
 
 <script>
+import { db } from "../main";
+import moment from "moment";
+
 export default {
   data() {
     return {
-
+      name: "",
+      object: "",
+      email: "",
+      msg: "",
+      date: moment().format()
     };
+  },
+  methods: {
+    displayMessage(msg, msgType) {
+      this.$message({
+        showClose: true,
+        message: msg,
+        type: msgType
+      });
+    },
+    sendMessage() {
+      var msgType = "";
+      if (this.validateEmail(this.email)) {
+        var msg = "Message envoyé avec succès";
+        var msgType = "success";
+        db.collection("messages")
+          .add({
+            name: this.name,
+            object: this.object,
+            email: this.email,
+            msg: this.msg,
+            date: this.date
+          })
+          .then(success => {
+            console.log("Document successfully written!");
+          })
+          .catch(error => {
+            console.error("Error writing document: ", error);
+          });
+        this.displayMessage(msg, msgType);
+        this.name = "";
+        this.object = "";
+        this.email = "";
+        this.msg = "";
+        this.date = "";
+      } else {
+        var msg = "Entrez une adresse email valide!";
+        var msgType = "error";
+        this.displayMessage(msg, msgType);
+      }
+    },
+    validateEmail(email) {
+      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+    },
+    formComplete() {
+      if (
+        this.name == "" ||
+        this.email == "" ||
+        this.object == "" ||
+        this.msg == ""
+      )
+        return true;
+    }
+  },
+  beforeMount() {
+    // moment.format();
   }
 };
 </script>
@@ -158,33 +227,33 @@ h3 {
   padding: 20px;
 }
 
-  .page-banner {
-    position: absolute;
-    bottom: 50px;
-    left: 50px;
-    color: #fff;
-  }
+.page-banner {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  color: #fff;
+}
 
-  .page-title {
-    font-family: "Oswald", sans-serif !important;
-    font-weight: 500;
-    margin: 0 !important;
-    padding: 0 !important;
-    font-size: 4rem;
-  }
+.page-title {
+  font-family: "Oswald", sans-serif !important;
+  font-weight: 500;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 4rem;
+}
 
-  .page-subtitle {
-    font-family: "Open Sans", sans-serif;
-    font-weight: 300;
-    margin: 0 !important;
-    padding: 0 !important;
-    font-size: 1rem;
-  }
+.page-subtitle {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 1rem;
+}
 
-  .box-card {
-    border: 1px solid #ccc;
-    text-align: left;
-  }
+.box-card {
+  border: 1px solid #ccc;
+  text-align: left;
+}
 .box-card img {
   width: 100%;
   height: 100%;

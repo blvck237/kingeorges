@@ -38,10 +38,17 @@ button {
   // background-color: #ffa200
 }
 
-.router-link-active{
+.router-link-active:not(.navbar-brand){
   background-color: #ffa200;
   color: #fff;
 }
 .router-link-active:hover {
   color: #fff !important;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }

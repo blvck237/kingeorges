@@ -6,7 +6,7 @@
         <SideNav></SideNav>
       </div>
       <div class="col-md-9">
-        <Carousel></Carousel>
+        <Carousel :images="carouselImages"></Carousel>
       </div>
     </section>
 
@@ -14,7 +14,7 @@
     <section class="row">
 
       <div class="col-md-3 col-sm-12">
-        <Card></Card>
+        <Card ref="ImageCard"></Card>
       </div>
 
       <div class="col-md-9">
@@ -52,7 +52,7 @@
         <h3 class="row-title">Nos produits</h3>
         <el-carousel indicator-position="none" :interval="5000" type="card" height="600px">
           <el-carousel-item v-for="product in productList" :key="product.index">
-            <ProductCard :model='product.model' :src="product.src" :name="product.name" class="col-md-12"></ProductCard>
+            <ProductCard :model='product.model' :src="product.src" :name="product.name" :product="product" class="col-md-12"></ProductCard>
           </el-carousel-item>
         </el-carousel>
       </div>
@@ -138,59 +138,69 @@
     },
     data() {
       return {
-        productList: [
-          {
-            name: "Stylo Acrylique",
-            model: "model",
-            src: "https://firebasestorage.googleapis.com/v0/b/king-geor.appspot.com/o/products%2F1.1.jpg?alt=media&token=ad03a6ed-fed1-465a-b84b-d0f76223facb"
-          },
-          {
-            name: "Sac en cotton",
-            model: "model",
-            src: "https://firebasestorage.googleapis.com/v0/b/king-geor.appspot.com/o/products%2F2.2.jpg?alt=media&token=f379f6aa-ebf9-494e-b9d4-6b4220f30ee3"
-          },
-          {
-            name: "Papier offset",
-            model: "model",
-            src: "https://firebasestorage.googleapis.com/v0/b/king-geor.appspot.com/o/products%2F3.1.jpg?alt=media&token=6c310157-d144-419c-88a7-3455be8dbba7"
-          },
-          {
-            name: "Carte de Visite",
-            model: "model",
-            src: "https://firebasestorage.googleapis.com/v0/b/king-geor.appspot.com/o/products%2F4.1.jpg?alt=media&token=4f0a4f51-7608-42d4-8d02-bb0c50328877"
-          },
-          {
-            name: "Chemise A4",
-            model: "model",
-            src: "https://firebasestorage.googleapis.com/v0/b/king-geor.appspot.com/o/products%2F5.1.jpg?alt=media&token=b737a267-5181-42c5-af0b-a781a29a58e3"
-          },
-          {
-            name: "T-shirt",
-            model: "model",
-            src: "https://firebasestorage.googleapis.com/v0/b/king-geor.appspot.com/o/products%2F6.1.jpg?alt=media&token=1541caaf-5295-45ec-a72e-ccfa0defea7a"
-          },
-        ],
-        products:[],
+        productList:[] = this.getProducts(),
+        carouselImages:[] = this.getCarouselImages(),
       };
-    },
-    firestore() {
-      return {
-      }
     },
     methods: {
       getProducts() {
+      var productList = [];
       db.collection("products").get().then((querySnapshot) => {
         querySnapshot.forEach((product) => {
-          this.products.push(product.data()) 
-          console.log(`${product.id} => ${product.data()}`);
-          console.log(this.products);
+        productList.push(product.data()) 
         });
       });
+      console.log('TCL: getProducts -> productList', productList)
+      return productList
+    },
+      getCarouselImages() {
+      var carouselImaeges = [];
+      db.collection("banner").get().then((querySnapshot) => {
+        querySnapshot.forEach((carouselImage) => {
+        carouselImaeges.push(carouselImage.data()) 
+        });
+      });
+			console.log('TCL: getCarouselImages -> carouselImaeges', carouselImaeges)
+      return carouselImaeges
+    },
+    displayMessage(msg, msgType) {
+      this.$message({
+        showClose: true,
+        message: msg,
+        type: msgType
+      });
+    },
+    validateEmail(email) {
+      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+    },
+    addToNewsletter(email) {
+      var msg = "";
+      var msgType = "";
+      if (this.validateEmail(email)) {
+        msg = "Vous avez souscris à notre newsletter avec succès",
+        msgType = "success",
+        db.collection("newsletter").doc().set({
+          email: email
+          }).then(
+            email = "",
+            this.displayMessage(msg, msgType)
+        )
+      } else {
+        msg = "Entrez une adresse email valide!",
+        msgType = "error",
+        this.displayMessage(msg, msgType)
+      }
+      return false;
+    },
+    addToCart(){
+      
     }
     },
 
     beforeMount (){
       this.getProducts();
+      this.getCarouselImages();
     }
 
   };
@@ -198,22 +208,6 @@
 </script>
 
 <style src="" scoped>
-  section {
-    margin-top: 1rem;
-  }
-
-  .row-title {
-    text-transform: uppercase;
-    font-family: "Oswald", sans-serif;
-    font-size: 1.2em;
-    border-bottom: 1px solid #dddddd;
-    box-shadow: 0 1px 0 0 #ffffff;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-    font-weight: 600;
-    line-height: 1.1;
-    color: #3f3f3f;
-  }
 
   .service-card {
     padding: 10px;
