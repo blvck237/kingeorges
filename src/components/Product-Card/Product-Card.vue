@@ -3,7 +3,16 @@
     <el-col class="prodcard" :span="24">
       <!-- Card -->
       <el-card :body-style="{ padding: '0px' }">
-        <progressive-img :src="src" placeholder=".../../assets/1.jpg" :blur="50" fallback=".../../assets/1.jpg" class="image" />
+        <router-link tag="a" :to="{ name: 'ProductDetails', params: { product: product }}">
+          <progressive-img
+          :src="src"
+          placeholder=".../../assets/1.jpg"
+          :blur="50"
+          fallback=".../../assets/1.jpg"
+          class="image"
+        />
+        </router-link>
+        
         <div>
           <!-- Product name -->
           <span class="prod-name">{{name}}</span>
@@ -12,7 +21,7 @@
           <div class="bottom clearfix">
             <!-- View button -->
             <el-col :span="12" class="button">
-              <router-link tag="a" :to="{ name: 'ProductDetails', params: { product: product }}">
+              <router-link tag="a" :to="{ name: 'ProductDetails', params: { product: product }}" >
                 <el-button type="text" class="action-btn" icon="el-icon-view"></el-button>
               </router-link>
             </el-col>
@@ -46,11 +55,11 @@ export default {
 <style scoped>
 @import "./Product-Card.scss";
 
-.action-btn{
+.action-btn {
   width: 100%;
 }
 
-.action-btn:hover{
-color: #ffffff
+.action-btn:hover {
+  color: #ffffff;
 }
 </style>
