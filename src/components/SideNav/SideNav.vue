@@ -5,33 +5,33 @@
       <el-menu class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
         <div class="nav-title">Nos Services</div>
 
-        <el-menu-item index="1">
-          <router-link tag="a" :to="{ name: 'Products', params: { activeName: 'embroidery' }}">Broderie</router-link>
-        </el-menu-item>
+        <router-link tag="el-menu-item" :to="{ name: 'Products', params: { activeName: 'embroidery' }}" index="1">
+        Broderie
+        </router-link>
 
-        <el-menu-item index="2">
-          <router-link tag="a" :to="{ name: 'Products', params: { activeName: 'conception' }}">Creation Graphique</router-link>
-        </el-menu-item>
+        <router-link tag="el-menu-item" :to="{ name: 'Products', params: { activeName: 'conception' }}" index="2">
+        Creation Graphique
+        </router-link>
 
-        <el-menu-item index="3">
-          <router-link tag="a" :to="{ name: 'Products', params: { activeName: 'printmaking' }}">Gravure</router-link>
-        </el-menu-item>
+        <router-link tag="el-menu-item" :to="{ name: 'Products', params: { activeName: 'printmaking' }}" index="3">
+         Gravure
+        </router-link>
 
-        <el-menu-item index="4">
-          <router-link tag="a" :to="{ name: 'Products', params: { activeName: 'dgt-printing' }}">Impression Numerique</router-link>
-        </el-menu-item>
+        <router-link tag="el-menu-item" :to="{ name: 'Products', params: { activeName: 'dgt-printing' }}" index="4">
+        Impression Numerique
+        </router-link>
 
-        <el-menu-item index="5">
-          <router-link tag="a" :to="{ name: 'Products', params: { activeName: 'offset-printing' }}">Impression Offset</router-link>
-        </el-menu-item>
+        <router-link tag="el-menu-item" :to="{ name: 'Products', params: { activeName: 'offset-printing' }}" index="5">
+         Impression Offset
+        </router-link>
 
-        <el-menu-item index="6">
-          <router-link tag="a" :to="{ name: 'Products', params: { activeName: 'serigraphy' }}">Sérigraphie</router-link>
-        </el-menu-item>
+        <router-link tag="el-menu-item" :to="{ name: 'Products', params: { activeName: 'serigraphy' }}" index="6">
+          Sérigraphie
+        </router-link>
 
-        <el-menu-item index="7">
-          <router-link tag="a" :to="{ name: 'Products', params: { activeName: 'Conseil' }}">Conseil</router-link>
-        </el-menu-item>
+        <!-- <router-link tag="el-menu-item" :to="{ name: 'Products', params: { activeName: 'Conseil' }}" index="7">
+          Conseil
+        </router-link> -->
 
       </el-menu>
     </el-col>

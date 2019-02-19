@@ -1,0 +1,25 @@
+
+  .row-title {
+    text-transform: uppercase;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.2em;
+    border-bottom: 1px solid #dddddd;
+    box-shadow: 0 1px 0 0 #ffffff;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: #3f3f3f;
+  }
+
+  section {
+    margin-top: 1rem;
+  }
+
+  .component-fade-enter-active, .component-fade-leave-active {
+    transition: opacity 1s ease;
+  }
+  .component-fade-enter, .component-fade-leave-to
+  /* .component-fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }

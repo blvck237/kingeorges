@@ -2,7 +2,9 @@
   <div class="container-fluid" id="app">
     <top-nav></top-nav>
     <navigation></navigation>
-    <router-view/>
+    <transition name="fade">
+      <router-view/>
+    </transition>
     <footer-nav class="footer"></footer-nav>
   </div>
 </template>
@@ -22,6 +24,7 @@ export default {
 </script>
 
 <style>
+@import "./app.scss";
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -32,7 +35,22 @@ export default {
   padding: 0 !important;
 }
 
-.footer{
+.footer {
   margin-top: 2em;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition-property: opacity;
+  transition-duration: 0.5s;
+}
+
+.fade-enter-active {
+  transition-delay: 0.5s;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
 }
 </style>
