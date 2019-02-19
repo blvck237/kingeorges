@@ -68,8 +68,13 @@ export default {
     }
   },
   beforeMount() {
-    this.similarProducts = this.getSimilarProducts();
-    this.product = this.$route.params.product;
+    if(!this.$route.params.product.category){
+			console.log('TCL: beforeMount -> product', 'product null')
+      this.$router.push('/Home')
+    }else{
+      this.similarProducts = this.getSimilarProducts();
+      this.product = this.$route.params.product;
+    }
   }
 };
 </script>
