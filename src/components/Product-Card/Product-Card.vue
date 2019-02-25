@@ -8,9 +8,9 @@
         >
           <progressive-img
             :src="src"
-            placeholder=".../../assets/1.jpg"
+            placeholder="./product.jpg"
             :blur="50"
-            fallback=".../../assets/1.jpg"
+            fallback="./product.jpg"
             class="image"
           />
         </router-link>
