@@ -40,8 +40,9 @@
 
       <div class="col-md-3 col-sm-12">
         <h3 class="row-title">Reseau social</h3>
-        <div class="fb-page" data-href="https://www.facebook.com/ImprimerieKingGeorges/" data-height="550" data-tabs="timeline, events"
-          data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true">
+        <div class="fb-page" data-href="https://www.facebook.com/ImprimerieKingGeorges/" data-height="550"
+          data-tabs="timeline, events" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true"
+          data-show-facepile="true">
           <blockquote cite="https://www.facebook.com/ImprimerieKingGeorges/" class="fb-xfbml-parse-ignore">
             <a href="https://www.facebook.com/ImprimerieKingGeorges/">Imprimerie King Georges</a>
           </blockquote>
@@ -51,9 +52,9 @@
       <div class="col-md-9">
         <h3 class="row-title">Nos produits</h3>
         <el-carousel indicator-position="none" :interval="5000" type="card" height="600px">
-          <el-carousel-item v-for="product in productList" :key="product.index">
-            <ProductCard :model='product.model' :src="product.src" :name="product.name" :product="product" class="col-md-12"></ProductCard>
-          </el-carousel-item>
+            <el-carousel-item v-for="product in products" :key="product.index">
+              <ProductCard :product="product" class="col-md-12"></ProductCard>
+            </el-carousel-item>
         </el-carousel>
       </div>
 
@@ -119,6 +120,7 @@
   import {
     db
   } from '../main'
+
   import SideNav from "../components/SideNav/SideNav";
   import Carousel from "../components/Carousel/Carousel";
   import AdCarousel from "../components/Ad-Carousel/Ad-Carousel";
@@ -136,71 +138,51 @@
       ImageCard,
       AdCarousel
     },
-    data() {
-      return {
-        productList:[] = this.getProducts(),
-        carouselImages:[] = this.getCarouselImages(),
-      };
+    computed: {
+      products() {
+        return this.$store.state.products
+       },
+       carouselImages(){
+         return this.$store.state.carouselImages
+       }
     },
     methods: {
-      getProducts() {
-      var productList = [];
-      db.collection("products").get().then((querySnapshot) => {
-        querySnapshot.forEach((product) => {
-        productList.push(product.data()) 
+      displayMessage(msg, msgType) {
+        this.$message({
+          showClose: true,
+          message: msg,
+          type: msgType
         });
-      });
-      console.log('TCL: getProducts -> productList', productList)
-      return productList
-    },
-      getCarouselImages() {
-      var carouselImaeges = [];
-      db.collection("banner").get().then((querySnapshot) => {
-        querySnapshot.forEach((carouselImage) => {
-        carouselImaeges.push(carouselImage.data()) 
-        });
-      });
-			console.log('TCL: getCarouselImages -> carouselImaeges', carouselImaeges)
-      return carouselImaeges
-    },
-    displayMessage(msg, msgType) {
-      this.$message({
-        showClose: true,
-        message: msg,
-        type: msgType
-      });
-    },
-    validateEmail(email) {
-      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(email);
-    },
-    addToNewsletter(email) {
-      var msg = "";
-      var msgType = "";
-      if (this.validateEmail(email)) {
-        msg = "Vous avez souscris à notre newsletter avec succès",
-        msgType = "success",
-        db.collection("newsletter").doc().set({
-          email: email
-          }).then(
-            email = "",
+      },
+      validateEmail(email) {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+      },
+      addToNewsletter(email) {
+        var msg = "";
+        var msgType = "";
+        if (this.validateEmail(email)) {
+            msg = "Vous avez souscris à notre newsletter avec succès",
+            msgType = "success",
+            db.collection("newsletter").doc().set({
+              email: email
+            }).then(
+              email = "",
+              this.displayMessage(msg, msgType)
+            )
+        } else {
+          msg = "Entrez une adresse email valide!",
+            msgType = "error",
             this.displayMessage(msg, msgType)
-        )
-      } else {
-        msg = "Entrez une adresse email valide!",
-        msgType = "error",
-        this.displayMessage(msg, msgType)
+        }
+        return false;
+      },
+      addToCart(product) {
+        this.$store.dispatch('addToCart', product.name)
       }
-      return false;
-    },
-    addToCart(){
-      
-    }
     },
 
-    beforeMount (){
-      this.getProducts();
-      this.getCarouselImages();
+    created() {
     }
 
   };
@@ -208,7 +190,6 @@
 </script>
 
 <style src="" scoped>
-
   .service-card {
     padding: 10px;
     font-size: 12px;
@@ -356,5 +337,4 @@
     flex: 0 0 auto;
     -webkit-flex: 0 0 auto;
   }
-
 </style>
