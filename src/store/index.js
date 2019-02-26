@@ -34,17 +34,26 @@ export default new Vuex.Store({
             var productList = [];
             db.collection("products").get().then((querySnapshot) => {
                 querySnapshot.forEach((product) => {
-                    productList.push(product.data())
+                    productList.push(product.data());
                 });
-                context.commit('setProducts', productList)
+                context.commit('setProducts', productList);
+            });
+        },
+        getCarouselImages(context) {
+            var carouselImages = [];
+            db.collection("banner").get().then((querySnapshot) => {
+                querySnapshot.forEach((carouselImage) => {
+                    carouselImages.push(carouselImage.data());
+                });
+                context.commit('setCarouselImages', carouselImages);
             });
         },
         addToCart(context, product) {
             const cartItem = context.state.cart.find(item => item.id === product.id)
             if (!cartItem) {
-                context.commit('pushToCart', product.id)
+                context.commit('pushToCart', product.id);
             } else {
-                context.commit('incrementItemQuantity', cartItem)
+                context.commit('incrementItemQuantity', cartItem);
             }
         },
 
