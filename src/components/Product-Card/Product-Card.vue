@@ -7,7 +7,7 @@
           :to="{ name: 'ProductDetails', params: { product: product, name: product.name+product.model+' '+'details' }}"
         >
           <progressive-img
-            :src="src"
+            :src="product.src"
             placeholder="./product.jpg"
             :blur="50"
             fallback="./product.jpg"
@@ -17,9 +17,9 @@
 
         <div>
           <!-- Product name -->
-          <span class="prod-name">{{name}}</span>
+          <span class="prod-name">{{product.name}}</span>
           <!-- Product Rating -->
-          <div class="prod-model">{{model}}</div>
+          <div class="prod-model">{{product.model}}</div>
           <div class="bottom clearfix">
             <!-- View button -->
             <el-col :span="12" class="button">
@@ -33,7 +33,7 @@
 
             <!-- Add to cart button -->
             <el-col :span="12" class="button cmd-btn">
-              <el-button type="text" class="action-btn">
+              <el-button @click="addToCart(product)" type="text" class="action-btn">
                 <i class="el-icon-goods el-icon-right"></i>
               </el-button>
             </el-col>
@@ -46,12 +46,17 @@
 
 <script>
 export default {
-  props: ["name", "src", "model", "product"],
+  props: ["product"],
   data() {
     return {
       rating: null,
       currentDate: new Date()
     };
+  },
+  methods:{
+    addToCart(product) {
+      this.$store.dispatch('addToCart', product)
+    }
   }
 };
 </script>
