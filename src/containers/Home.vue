@@ -183,6 +183,8 @@
     },
 
     created() {
+      this.$store.dispatch('getProducts')
+      this.$store.dispatch('getCarouselImages')
     }
 
   };
