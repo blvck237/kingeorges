@@ -36,7 +36,11 @@
               </a>
             </li>
             <li class="nav-item">
-              <router-link tag="a" class="nav-link" to="/cart"><i class="el-icon-goods"></i></router-link>
+              <el-badge :value="cartSize" :max="9" class="item">
+                <router-link tag="a" class="nav-link" to="/cart">
+                  <i class="el-icon-goods"></i>
+                </router-link>
+              </el-badge>
             </li>
           </ul>
         </div>
@@ -69,6 +73,11 @@ export default {
     return {
       search: false
     };
+  }, 
+  computed:{
+    cartSize(){
+      return this.$store.getters.cartProducts.length
+    }
   }
 };
 </script>
