@@ -53,9 +53,16 @@ export default {
       currentDate: new Date()
     };
   },
-  methods:{
+  methods: {
     addToCart(product) {
-      this.$store.dispatch('addToCart', product)
+      this.$store.dispatch("addToCart", product).then(success => {
+        this.$notify({
+            title: '',
+            message: product.name + ' a été ajouté à votre panier!',
+            type: 'success',
+            // position: 'bottom-right',
+        });
+      });
     }
   }
 };
