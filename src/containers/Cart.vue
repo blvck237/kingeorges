@@ -1,96 +1,107 @@
 
 <template>
   <div class="container">
-    <section class="row">
-      <el-row class="products" v-for="product in products" :key="product.index" :gutter="20">
-        <el-col :span="4">
-          <progressive-img
-            :src="product.src"
-            placeholder="./product.jpg"
-            :blur="50"
-            fallback="./product.jpg"
-            class="image"
-          />
-        </el-col>
-
-        <el-col class="info" :span="14">
-          <div class="grid-content name">{{product.name}}</div>
-          <div class="grid-content model">{{product.model}}</div>
-        </el-col>
-
-        <el-col class="qty" :span="6">
-          <el-input-number v-model="product.quantity"></el-input-number>
-        </el-col>
-      </el-row>
-    </section>
-
-    <hr>
-
-    <el-button @click="dialogVisibility = true" class="confirm-cart">Demander une proforma</el-button>
-
-    <section class="row">
-      <div class="col-md-4 service-card">
-        <el-card shadow="always">
-          <div class="card-title">
-            <span class="icon-box">
-              <i class="fas fa-truck"></i>
-            </span>
-            <b>Livraison gratuite</b>
-          </div>Personalisez vos produits chez King Georges et faites vous les livrer gratuitement.
-        </el-card>
-      </div>
-
-      <div class="col-md-4 service-card">
-        <el-card shadow="always">
-          <div class="card-title">
-            <span class="icon-box">
-              <i class="fas fa-phone"></i>
-            </span>
-            <b>SUPPORT 7J/7</b>
-          </div>Nous vous apportons de l'assisstance tous les jours de la semaine.
-        </el-card>
-      </div>
-
-      <div class="col-md-4 service-card">
-        <el-card shadow="always">
-          <div class="card-title">
-            <span class="icon-box">
-              <i class="fas fa-hand-holding-usd"></i>
-            </span>
-            <b>QUALITÉ-PRIX</b>
-          </div>Nous vous offrons de le bonne qualité à des prix adorables.
-        </el-card>
-      </div>
-    </section>
-
-    <el-dialog title="Informations requises" :visible.sync="dialogVisibility" width="30%" center>
-      <span
-        class="subtitle"
-        style="text-align: center !important"
-      >Afin de vous répondre, nous souhaitons avoir vos informations personlles!</span>
-      <form>
-        <el-row :gutter="20" class="form-input">
-          <el-col :span="12">
-            <el-input placeholder="Noms" v-model="customer.name" clearable></el-input>
+    <div v-if="products.length > 0">
+      <section class="row">
+        <el-row class="products" v-for="product in products" :key="product.index" :gutter="20">
+          <el-col :span="6">
+            <progressive-img
+              :src="product.src"
+              placeholder="./product.jpg"
+              :blur="50"
+              fallback="./product.jpg"
+              class="image"
+            />
           </el-col>
-          <el-col :span="12">
-            <el-select v-model="customer.type" placeholder="Client">
-              <el-option key="Entreprise" label="Entreprise" value="Entreprise"></el-option>
-              <el-option key="Particulier" label="Particulier" value="Particulier"></el-option>
-            </el-select>
+
+          <el-col class="info" :span="12">
+            <div class="grid-content name">{{product.name}}</div>
+            <div class="grid-content model">{{product.model}}</div>
+          </el-col>
+
+          <el-col class="qty" :span="6">
+            <el-input-number v-model="product.quantity"></el-input-number>
           </el-col>
         </el-row>
-        <el-row :gutter="20" class="form-input">
-          <el-col :span="24">
-            <el-input placeholder="Email" v-model="customer.email" clearable></el-input>
-          </el-col>
-        </el-row>
-      </form>
-      <span slot="footer" class="dialog-footer">
-        <el-button class="cancel-btn" @click="dialogVisibility = false">Annuler</el-button>
-        <el-button class="action-btn" @click="checkout()">Confirmer</el-button>
-      </span>
-    </el-dialog>
+      </section>
+
+      <hr>
+
+      <el-button @click="dialogVisibility = true" class="confirm-cart">Demander une proforma</el-button>
+
+      <section class="row">
+        <div class="col-md-4 service-card">
+          <el-card shadow="always">
+            <div class="card-title">
+              <span class="icon-box">
+                <i class="fas fa-truck"></i>
+              </span>
+              <b>Livraison gratuite</b>
+            </div>Personalisez vos produits chez King Georges et faites vous les livrer gratuitement.
+          </el-card>
+        </div>
+
+        <div class="col-md-4 service-card">
+          <el-card shadow="always">
+            <div class="card-title">
+              <span class="icon-box">
+                <i class="fas fa-phone"></i>
+              </span>
+              <b>SUPPORT 7J/7</b>
+            </div>Nous vous apportons de l'assisstance tous les jours de la semaine.
+          </el-card>
+        </div>
+
+        <div class="col-md-4 service-card">
+          <el-card shadow="always">
+            <div class="card-title">
+              <span class="icon-box">
+                <i class="fas fa-hand-holding-usd"></i>
+              </span>
+              <b>QUALITÉ-PRIX</b>
+            </div>Nous vous offrons de le bonne qualité à des prix adorables.
+          </el-card>
+        </div>
+      </section>
+
+      <el-dialog title="Informations requises" :visible.sync="dialogVisibility" width="30%" center>
+        <span
+          class="subtitle"
+          style="text-align: center !important"
+        >Afin de vous répondre, nous souhaitons avoir vos informations personlles!</span>
+        <form>
+          <el-row :gutter="20" class="form-input">
+            <el-col :span="12">
+              <el-input placeholder="Noms" v-model="customer.name" clearable></el-input>
+            </el-col>
+            <el-col :span="12">
+              <el-select v-model="customer.type" placeholder="Client">
+                <el-option key="Entreprise" label="Entreprise" value="Entreprise"></el-option>
+                <el-option key="Particulier" label="Particulier" value="Particulier"></el-option>
+              </el-select>
+            </el-col>
+          </el-row>
+          <el-row :gutter="20" class="form-input">
+            <el-col :span="24">
+              <el-input placeholder="Email" v-model="customer.email" clearable></el-input>
+            </el-col>
+          </el-row>
+        </form>
+        <span slot="footer" class="dialog-footer">
+          <el-button class="cancel-btn" @click="dialogVisibility = false">Annuler</el-button>
+          <el-button class="action-btn" @click="checkout()" :disabled="checkForm()">Confirmer</el-button>
+        </span>
+      </el-dialog>
+    </div>
+
+    <div class="empty-cart" v-else>
+      <h1>Votre panier est vide</h1>
+      <router-link
+        tag="a"
+        class="catalog"
+        :to="{ name: 'Products', params: { activeName: 'embroidery' }}"
+      >Consulter notre catalogue</router-link>
+    </div>
   </div>
 </template>
 
@@ -107,9 +118,39 @@ export default {
     };
   },
   methods: {
+    displayMessage(msg, msgType) {
+      this.$message({
+        showClose: true,
+        message: msg,
+        type: msgType
+      });
+    },
     checkout() {
-      this.$store.dispatch("checkOut", this.customer);
-			console.log('TCL: checkout -> this.customer', this.customer)
+      if (this.validateEmail(this.customer.email)) {
+        this.$store.dispatch("checkOut", this.customer).then(success => {
+          this.$notify({
+            title: "Reussite",
+            message: "Votre proforma a bel et bien été demandée. Vous serez contacter dans des brefs delais",
+            type: "success"
+          });
+        });
+      } else {
+        var msg = "Entrez une adresse email valide!";
+        var msgType = "error";
+        this.displayMessage(msg, msgType);
+      }
+    },
+    checkForm() {
+      if (
+        this.customer.name == "" ||
+        this.customer.email == "" ||
+        this.customer.type == ""
+      )
+        return true;
+    },
+    validateEmail(email) {
+      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
     }
   },
   computed: {
@@ -122,6 +163,17 @@ export default {
 
 
 <style scoped>
+.empty-cart {
+  padding: 25%;
+  font-size: 1.5em;
+  font-family: "Open Sans", sans-serif;
+}
+h1 {
+  opacity: 0.5;
+}
+.catalog {
+  color: #ffa200;
+}
 .el-row {
   width: 100%;
 }
