@@ -61,11 +61,16 @@ export default {
       return productList;
     },
     addToCart() {
-      console.log(
-        "TCL: addToCart -> this.$route.params.product",
-        this.$route.params.product
-      );
-      this.$store.dispatch("addToCart", this.$route.params.product);
+      this.$store
+        .dispatch("addToCart", this.$route.params.product)
+        .then(success => {
+          this.$notify({
+            title: "",
+            message: this.product.name + " a été ajouté à votre panier!",
+            type: "success"
+            // position: 'bottom-right',
+          });
+        });
     }
   },
   beforeMount() {
