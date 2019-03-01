@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+
 import * as _ from 'lodash';
+import createPersistedState from 'vuex-persistedstate';
 
 import { db } from '@/main';
 
@@ -14,7 +16,7 @@ export default new Vuex.Store({
         cart: [],
         checkoutStatus: null,
     },
-
+    plugins: [createPersistedState()],
     getters: {
         cartProducts(state) {
             return state.cart.map(cartItem => {
