@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import * as _ from 'lodash';
 
 import { db } from '@/main';
 
@@ -22,6 +23,7 @@ export default new Vuex.Store({
                 return {
                     name: product.name,
                     src: product.src,
+                    id: product.id,
                     model: product.model,
                     quantity: cartItem.quantity,
                 }
@@ -56,7 +58,18 @@ export default new Vuex.Store({
                 context.commit('incrementItemQuantity', cartItem);
             }
         },
-
+        increaseItem(context, product) {
+            const cartItem = context.state.cart.find(item => item.id === product.id)
+            if (cartItem)
+                context.commit('incrementItemQuantity', cartItem);
+        },
+        decreaseItem(context, product) {
+            const cartItem = context.state.cart.find(item => item.id === product.id)
+            if (cartItem.quantity > 1)
+                context.commit('decrementItemQuantity', cartItem);
+            else
+                context.commit('removeFromCart', cartItem);
+        },
         checkOut(context, customer) {
             db.collection('proforma').doc().set({
                 name: customer.name,
@@ -84,10 +97,19 @@ export default new Vuex.Store({
             state.cart.push({
                 id: product,
                 quantity: 1
+            });
+        },
+        removeFromCart(state, cartItem) {
+            state.cart = _.remove(state.cart, function (o) {
+                return o.id != cartItem.id
             })
+            console.log('TCL: removeFromCart -> state.cartProducts', state.cartProducts)
         },
         incrementItemQuantity(state, cartItem) {
             cartItem.quantity++;
+        },
+        decrementItemQuantity(state, cartItem) {
+            cartItem.quantity--;
         },
         setCheckoutStatus(state, status) {
             state.checkoutStatus = status
