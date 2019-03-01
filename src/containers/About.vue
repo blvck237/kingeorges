@@ -135,7 +135,8 @@
   .text {
     background: #fff;
     padding: 20px;
-    text-align: left
+    text-align: left;
+    font-family: 'Open sans', sans-serif;
   }
 
   .services{

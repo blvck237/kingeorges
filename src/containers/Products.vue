@@ -18,7 +18,7 @@
       <el-tabs v-model="activeName">
         <el-tab-pane label="Broderie" name="embroidery">
           <transition name="fade">
-            <section class="row">
+            <section v-if="embdProducts.length > 0" class="row">
               <ProductCard
                 v-for="product in embdProducts"
                 :key="product.index"
@@ -29,11 +29,14 @@
                 class="col-3"
               ></ProductCard>
             </section>
+            <section v-else class="no-product">
+              <h1>Cette rubrique est vide</h1>
+            </section>
           </transition>
         </el-tab-pane>
 
         <el-tab-pane label="Creation Graphique" name="conception">
-          <section class="row">
+          <section v-if="concProducts.length > 0" class="row">
             <ProductCard
               v-for="product in concProducts"
               :key="product.index"
@@ -44,10 +47,13 @@
               class="col-3"
             ></ProductCard>
           </section>
+          <section v-else class="no-product">
+            <h1>Cette rubrique est vide</h1>
+          </section>
         </el-tab-pane>
 
         <el-tab-pane label="Gravure" name="printmaking">
-          <section class="row">
+          <section v-if="prtmProducts.length > 0" class="row">
             <ProductCard
               v-for="product in prtmProducts"
               :key="product.index"
@@ -58,10 +64,13 @@
               class="col-3"
             ></ProductCard>
           </section>
+          <section v-else class="no-product">
+            <h1>Cette rubrique est vide</h1>
+          </section>
         </el-tab-pane>
 
         <el-tab-pane label="Impression Numerique" name="dgt-printing">
-          <section class="row">
+          <section v-if="dprtProducts.length > 0" class="row">
             <ProductCard
               v-for="product in dprtProducts"
               :key="product.index"
@@ -72,10 +81,13 @@
               class="col-3"
             ></ProductCard>
           </section>
+          <section v-else class="no-product">
+            <h1>Cette rubrique est vide</h1>
+          </section>
         </el-tab-pane>
 
         <el-tab-pane label="Impression Offset" name="offset-printing">
-          <section class="row">
+          <section v-if="oprtProducts.length > 0" class="row">
             <ProductCard
               v-for="product in oprtProducts"
               :key="product.index"
@@ -86,10 +98,13 @@
               class="col-3"
             ></ProductCard>
           </section>
+          <section v-else class="no-product">
+            <h1>Cette rubrique est vide</h1>
+          </section>
         </el-tab-pane>
 
         <el-tab-pane label="Serigraphie" name="serigraphy">
-          <section class="row">
+          <section v-if="srghProducts.length > 0" class="row">
             <ProductCard
               v-for="product in srghProducts"
               :key="product.index"
@@ -100,6 +115,9 @@
               class="col-3"
             ></ProductCard>
           </section>
+          <section v-else class="no-product">
+            <h1>Cette rubrique est vide</h1>
+          </section>
         </el-tab-pane>
       </el-tabs>
     </section>
@@ -107,7 +125,6 @@
 </template>
 
 <script>
-import { db } from "../main";
 import ProductCard from "../components/Product-Card/Product-Card";
 import * as _ from "lodash";
 export default {
@@ -117,7 +134,7 @@ export default {
   },
   data() {
     return {
-      activeName: "embd",
+      activeName: "embroidery",
       embdProducts: [],
       concProducts: [],
       prtmProducts: [],
@@ -127,40 +144,38 @@ export default {
     };
   },
   methods: {
-    getProducts() {
-      var productList = [];
-      db.collection("products")
-        .get()
-        .then(querySnapshot => {
-          querySnapshot.forEach(product => {
-            productList.push(product.data());
-          });
-        })
-        .then(success => {
-          this.sortProducts();
-        });
-      console.log("Prods: ", productList);
-      return productList;
-    },
     sortProducts() {
-      let products = this.productList;
-      this.oprtProducts = _.filter(products, ["category", "oprt"]);
-			console.log('TCL: sortProducts -> this.oprtProducts', this.oprtProducts)
-      this.srghProducts = _.filter(products, ["category", "srgh"]);
-      this.concProducts = _.filter(products, ["category", "conc"]);
-      this.prtmProducts = _.filter(products, ["category", "prtm"]);
-      this.embdProducts = _.filter(products, ["category", "embd"]);
-      this.dprtProducts = _.filter(products, ["category", "dprt"]);
+      this.oprtProducts = _.filter(this.$store.state.products, [
+        "category",
+        "oprt"
+      ]);
+      this.srghProducts = _.filter(this.$store.state.products, [
+        "category",
+        "srgh"
+      ]);
+      this.concProducts = _.filter(this.$store.state.products, [
+        "category",
+        "conc"
+      ]);
+      this.prtmProducts = _.filter(this.$store.state.products, [
+        "category",
+        "prtm"
+      ]);
+      this.embdProducts = _.filter(this.$store.state.products, [
+        "category",
+        "embd"
+      ]);
+      this.dprtProducts = _.filter(this.$store.state.products, [
+        "category",
+        "dprt"
+      ]);
     }
   },
-  beforeMount() {
-    this.productList = this.getProducts();
-    this.activeName = this.$route.params.activeName;
-    console.log("Params: ", this.$route.params.activeName);
-    // this.sortProducts();
-  },
   created() {
-    this.activeName = this.$route.params.activeName;
+    if (this.$route.params.activeName)
+      this.activeName = this.$route.params.activeName;
+    else this.activeName = "embroidery";
+    this.sortProducts();
   }
 };
 </script>
@@ -219,5 +234,12 @@ section {
 .box-card img {
   width: 100%;
   height: 100%;
+}
+
+.no-product {
+  padding: 15%;
+  opacity: 0.5;
+  font-size: 1.5em;
+  font-family: "Open Sans", sans-serif;
 }
 </style>
