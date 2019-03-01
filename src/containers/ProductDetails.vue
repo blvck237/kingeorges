@@ -6,13 +6,10 @@
       </el-col>
       <el-col :span="16">
         <div class="product-info">
-          <div class="product-name">
-            {{this.product.name}}
-            <!-- <span class="product-price">{{this.product.price}} XAF</span> -->
-          </div>
-          <div class="product-model">{{this.product.model}}</div>
-          <div class="product-description">{{this.product.description}}</div>
-          <el-button class="adc-btn" icon="el-icon-goods">Add to cart</el-button>
+          <div class="product-name">{{product.name}}</div>
+          <div class="product-model">{{product.model}}</div>
+          <div class="product-description">{{product.description}}</div>
+          <el-button @click="addToCart()" class="adc-btn" icon="el-icon-goods">Add to cart</el-button>
         </div>
       </el-col>
     </el-row>
@@ -23,9 +20,6 @@
         <ProductCard
           v-for="product in similarProducts"
           :key="product.index"
-          :model="product.model"
-          :src="product.src"
-          :name="product.name"
           :product="product"
           class="col-md-4"
         ></ProductCard>
@@ -38,14 +32,14 @@
 import { db } from "../main";
 import ProductCard from "../components/Product-Card/Product-Card";
 export default {
-  name: "Products",
+  name: "ProductDetails",
   components: {
     ProductCard
   },
   data() {
     return {
       product: {},
-      similarProducts:[]
+      similarProducts: []
     };
   },
   methods: {
@@ -65,13 +59,26 @@ export default {
           });
         });
       return productList;
+    },
+    addToCart() {
+      this.$store
+        .dispatch("addToCart", this.$route.params.product)
+        .then(success => {
+          this.$notify({
+            title: "",
+            message: this.product.name + " a été ajouté à votre panier!",
+            type: "success"
+            // position: 'bottom-right',
+          });
+        });
     }
   },
   beforeMount() {
-    if(!this.$route.params.product.category){
-			console.log('TCL: beforeMount -> product', 'product null')
-      this.$router.push('/Home')
-    }else{
+    this.product = this.$route.params.product;
+    if (!this.$route.params.product.category) {
+      console.log("TCL: beforeMount -> product", "product null");
+      this.$router.push("/Home");
+    } else {
       this.similarProducts = this.getSimilarProducts();
       this.product = this.$route.params.product;
     }

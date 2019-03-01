@@ -52,3 +52,7 @@ button {
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
+
+.el-badge__content, .is-fixed, sup{
+  background-color: #ffa200 !important;
+}
