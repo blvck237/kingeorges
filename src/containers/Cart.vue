@@ -20,7 +20,18 @@
           </el-col>
 
           <el-col class="qty" :span="6">
-            <el-input-number v-model="product.quantity"></el-input-number>
+            <!-- <el-input-number :max="1000" v-model="product.quantity"></el-input-number> -->
+            <el-row>
+              <el-col :span="8">
+                <el-button @click="decrementQuantity(product)" icon="el-icon-minus" circle></el-button>
+              </el-col>
+              <el-col :span="8">
+                <el-input-number :min="1" :controls="false" v-model="product.quantity"></el-input-number>
+              </el-col>
+              <el-col :span="8">
+                <el-button @click="incrementQuantity(product)" icon="el-icon-plus" circle></el-button>
+              </el-col>
+            </el-row>
           </el-col>
         </el-row>
       </section>
@@ -111,10 +122,12 @@ export default {
     return {
       dialogVisibility: false,
       customer: {
-        type: "dde",
-        email: "ee",
-        name: "erer"
-      }
+        type: "",
+        email: "",
+        name: ""
+      },
+      add:"add",
+      sub: "sub"
     };
   },
   methods: {
@@ -130,7 +143,8 @@ export default {
         this.$store.dispatch("checkOut", this.customer).then(success => {
           this.$notify({
             title: "Reussite",
-            message: "Votre proforma a bel et bien été demandée. Vous serez contacter dans des brefs delais",
+            message:
+              "Votre proforma a bel et bien été demandée. Vous serez contacter dans des brefs delais",
             type: "success"
           });
         });
@@ -151,6 +165,13 @@ export default {
     validateEmail(email) {
       var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email);
+    },
+    incrementQuantity(product) {
+			console.log('TCL: incrementQuantity -> product', product)
+      this.$store.dispatch("increaseItem", product);
+    },
+    decrementQuantity(product) {
+      this.$store.dispatch("decreaseItem", product);
     }
   },
   computed: {
@@ -272,5 +293,9 @@ i {
 
 .el-select-dropdown__item {
   color: #ffa200;
+}
+
+.el-input-number {
+  width: 100%;
 }
 </style>
