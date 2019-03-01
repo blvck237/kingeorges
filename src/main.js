@@ -13,6 +13,8 @@ import 'element-ui/lib/theme-chalk/index.css';
 import locale from 'element-ui/lib/locale/lang/en'
 import VueProgressiveImage from 'vue-progressive-image'
 
+import store from './store/index';
+
 Vue.use(VueProgressiveImage, {
   placeholder: './assets/1.jpg'
 })
@@ -36,6 +38,7 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   components: {
     App
