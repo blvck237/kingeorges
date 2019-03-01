@@ -172,7 +172,9 @@ export default {
     }
   },
   created() {
-    this.activeName = this.$route.params.activeName;
+    if (this.$route.params.activeName)
+      this.activeName = this.$route.params.activeName;
+    else this.activeName = "embroidery";
     this.sortProducts();
   }
 };
