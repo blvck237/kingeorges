@@ -57,10 +57,10 @@ export default {
     addToCart(product) {
       this.$store.dispatch("addToCart", product).then(success => {
         this.$notify({
-            title: '',
-            message: product.name + ' a été ajouté à votre panier!',
-            type: 'success',
-            // position: 'bottom-right',
+          title: "",
+          message: product.name + " a été ajouté à votre panier!",
+          type: "success"
+          // position: 'bottom-right',
         });
       });
     }
@@ -78,5 +78,17 @@ export default {
 
 .action-btn:hover {
   color: #ffffff;
+}
+
+.image {
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.image:hover {
+  -moz-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
 }
 </style>
