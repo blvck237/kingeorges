@@ -26,7 +26,7 @@
                 <el-button @click="decrementQuantity(product)" icon="el-icon-minus" circle></el-button>
               </el-col>
               <el-col :span="8">
-                <el-input-number :min="1" :controls="false" v-model="product.quantity"></el-input-number>
+                <el-input-number @change="setQuantity(product, product.quantity)" :min="1" :controls="false" v-model="product.quantity"></el-input-number>
               </el-col>
               <el-col :span="8">
                 <el-button @click="incrementQuantity(product)" icon="el-icon-plus" circle></el-button>
@@ -38,7 +38,7 @@
 
       <hr>
 
-      <el-button @click="dialogVisibility = true" class="confirm-cart">Demander une proforma</el-button>
+      <el-button @click="dialogVisibility = true" :disabled="checkQty()" class="confirm-cart">Demander une proforma</el-button>
 
       <section class="row">
         <div class="col-md-4 service-card">
@@ -162,16 +162,27 @@ export default {
       )
         return true;
     },
+    checkQty() {
+      for (let i = 0; i < this.$store.getters.cartProducts.length; i++) {
+        if(this.$store.getters.cartProducts[i].quantity == null)
+        return true;
+        }
+    },
     validateEmail(email) {
       var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email);
     },
     incrementQuantity(product) {
-			console.log('TCL: incrementQuantity -> product', product)
       this.$store.dispatch("increaseItem", product);
     },
     decrementQuantity(product) {
       this.$store.dispatch("decreaseItem", product);
+    },
+    setQuantity(product, qty) {
+      if(qty){
+        console.log("Log: setQuantity -> qty", qty)
+        this.$store.dispatch("setQuantity", product, qty);
+      }
     }
   },
   computed: {
