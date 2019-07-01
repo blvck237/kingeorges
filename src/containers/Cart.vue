@@ -180,7 +180,6 @@ export default {
     },
     setQuantity(product, qty) {
       if(qty){
-        console.log("Log: setQuantity -> qty", qty)
         this.$store.dispatch("setQuantity", product, qty);
       }
     }

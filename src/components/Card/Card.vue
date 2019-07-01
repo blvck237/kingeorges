@@ -23,7 +23,6 @@ export default {
   methods: {
     subscribeNewsletter() {
       this.$parent.addToNewsletter(this.email);
-      console.log("User mail", this.email);
     }
   }
 };

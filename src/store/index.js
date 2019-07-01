@@ -23,7 +23,6 @@ export default new Vuex.Store({
         const product = state.products.find(
           product => product.id === cartItem.id
         );
-        console.log("TCL: getCart -> product", product);
         return {
           name: product.name,
           src: product.src,
@@ -116,10 +115,6 @@ export default new Vuex.Store({
       state.cart = _.remove(state.cart, item => {
         return item.id != cartItem.id;
       });
-      console.log(
-        "TCL: removeFromCart -> state.cartProducts",
-        state.cartProducts
-      );
     },
     incrementItemQuantity(state, cartItem) {
       cartItem.quantity++;
@@ -128,9 +123,7 @@ export default new Vuex.Store({
       cartItem.quantity--;
     },
     setItemQuantity(state, { cartItem, product }) {
-      console.log("Log: setItemQuantity -> product", product)
-      console.log("Log: setItemQuantity -> cartItem", cartItem);
-      cartItem.quantity = product.quantity
+      cartItem.quantity = product.quantity;
     },
     setCheckoutStatus(state, status) {
       state.checkoutStatus = status;
