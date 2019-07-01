@@ -32,7 +32,7 @@
 
         <div class="col-md-12 logo">
           <a href="#">
-            <img src="../../assets/logo.png" alt="" style="width: 15em;">
+            <img src="../../assets/logo.png" alt="" style="width: 10em;">
           </a>
         </div>
       </div>

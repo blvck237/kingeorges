@@ -2,10 +2,10 @@
   <div class="navigation">
     <div class="container">
       <nav class="navbar navbar-expand-md">
-        <router-link tag="a" class="navbar-brand" to="/home">
-          <img class="d-inline-block align-top" src="../../assets/logo.png" alt>
+        <router-link tag="a" class="col-md-3 navbar-brand" to="/home">
+          <img class="d-inline-block align-top logo" src="../../assets/logo.png" alt>
         </router-link>
-        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2 col-md-9">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
               <router-link tag="a" class="nav-link" to="/home">Accueil</router-link>

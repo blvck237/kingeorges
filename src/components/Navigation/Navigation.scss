@@ -2,12 +2,15 @@ img {
   width: 12em;
   display: block;
   margin: auto;
-  margin-top: 0.5em
+  margin-top: 0.5em;
 }
 
 .navigation {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-size: 1em;
+  padding: 0 !important;
+  margin: 0 !important;
+
 }
 
 a {
@@ -38,7 +41,7 @@ button {
   // background-color: #ffa200
 }
 
-.router-link-active:not(.navbar-brand){
+.router-link-active:not(.navbar-brand) {
   background-color: #ffa200;
   color: #fff;
 }
@@ -46,13 +49,30 @@ button {
   color: #fff !important;
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
 
-.el-badge__content, .is-fixed, sup{
+.el-badge__content,
+.is-fixed,
+sup {
   background-color: #ffa200 !important;
+}
+
+.logo {
+  width: 5em;
+  margin: 0 auto;
+}
+
+.navbar-brand {
+  margin: 0 auto;
+}
+
+.navbar{
+  margin: 0;
+  padding: 0;
 }
