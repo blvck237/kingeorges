@@ -1,0 +1,5 @@
+# Redirection for history pushstate
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
