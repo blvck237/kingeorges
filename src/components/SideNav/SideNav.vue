@@ -5,33 +5,29 @@
       <el-menu class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
         <div class="nav-title">Nos Services</div>
 
-        <router-link tag="el-menu-item" :to="{ name: 'Products', params: { activeName: 'embroidery' }}" index="1">
+        <el-menu-item @click="navigateToProducts('embroidery')" index="1">
         Broderie
-        </router-link>
+        </el-menu-item>
 
-        <router-link tag="el-menu-item" :to="{ name: 'Products', params: { activeName: 'conception' }}" index="2">
+        <el-menu-item @click="navigateToProducts('conception')" index="2">
         Creation Graphique
-        </router-link>
+        </el-menu-item>
 
-        <router-link tag="el-menu-item" :to="{ name: 'Products', params: { activeName: 'printmaking' }}" index="3">
+        <el-menu-item @click="navigateToProducts('printmaking')" index="3">
          Gravure
-        </router-link>
+        </el-menu-item>
 
-        <router-link tag="el-menu-item" :to="{ name: 'Products', params: { activeName: 'dgt-printing' }}" index="4">
+        <el-menu-item @click="navigateToProducts('dgt-printing')" index="4">
         Impression Numerique
-        </router-link>
+        </el-menu-item>
 
-        <router-link tag="el-menu-item" :to="{ name: 'Products', params: { activeName: 'offset-printing' }}" index="5">
+        <el-menu-item @click="navigateToProducts('offset-printing')" index="5">
          Impression Offset
-        </router-link>
+        </el-menu-item>
 
-        <router-link tag="el-menu-item" :to="{ name: 'Products', params: { activeName: 'serigraphy' }}" index="6">
+        <el-menu-item @click="navigateToProducts('serigraphy')" index="6">
           Sérigraphie
-        </router-link>
-
-        <!-- <router-link tag="el-menu-item" :to="{ name: 'Products', params: { activeName: 'Conseil' }}" index="7">
-          Conseil
-        </router-link> -->
+        </el-menu-item>
 
       </el-menu>
     </el-col>
@@ -44,6 +40,9 @@
 <script>
   export default {
     methods: {
+      navigateToProducts(type){
+        this.$router.push({ name: 'Products', params: { activeName: type } })
+      },
       handleOpen(key, keyPath) {
         console.log(key, keyPath);
       },
