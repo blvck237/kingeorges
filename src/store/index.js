@@ -4,7 +4,7 @@ import Vuex from "vuex";
 import * as _ from "lodash";
 import createPersistedState from "vuex-persistedstate";
 
-import { db } from "@/main";
+import { db } from "@/db";
 
 Vue.use(Vuex);
 

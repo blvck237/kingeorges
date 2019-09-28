@@ -119,7 +119,8 @@
 <script>
   import {
     db
-  } from '../main'
+  } from '../db'
+
 
   import SideNav from "../components/SideNav/SideNav";
   import Carousel from "../components/Carousel/Carousel";

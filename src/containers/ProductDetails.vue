@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { db } from "../main";
+import { db } from "@/db";
 import ProductCard from "../components/Product-Card/Product-Card";
 export default {
   name: "ProductDetails",

@@ -87,7 +87,7 @@
 </template>
 
 <script>
-import { db } from "../main";
+import { db } from "@/db";
 import moment from "moment";
 
 export default {
